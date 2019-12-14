@@ -1,8 +1,8 @@
 # Description
 
-Please include a summary of the change.
-🔥 If it is a new feature, describe the feature and the iteration of the project spec it addresses.
-🐞 If it is a bug or issue fix, describe the issue that was fixed.
+Please include a summary of the change.  
+🔥 If it is a new feature, describe the feature and the iteration of the project spec it addresses.  
+🐞 If it is a bug or issue fix, describe the issue that was fixed.  
 Note any questions or struggles as well.
 
 ## Type of change
