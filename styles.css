@@ -23,18 +23,6 @@
   padding-top: 3px;
 }
 
-h1 {
-  font-family: 'Lakki Reddy', cursive;
-  text-align: center;
-  color: #ff5964;
-  font-size: 4em;
-  text-shadow: .3px .3px 1px #000;
-}
-
-.header--secondary-font-color {
-  color: #ffe74c;
-}
-
 .column1 {
   grid-area: column1;
   background-color: #6bf178;
@@ -55,4 +43,19 @@ h1 {
   padding: 10px 0;
   background-color: #35a7ff;
   text-align: center;
+}
+
+/* HEADER */
+
+.header__title {
+  color: #ff5964;
+  font-family: 'Lakki Reddy', cursive;
+  text-align: center;
+  font-size: 4em;
+  text-shadow: .3px .3px 1px #000;
+
+}
+
+.header--secondary-font-color {
+  color: #ffe74c;
 }
