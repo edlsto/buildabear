@@ -11,10 +11,14 @@ class Outfit {
   }
 
   removeGarment(garment) {
-    this.garments.splice(this.garments.indexOf(garment), 1)
+    if (this.garments.includes(garment)) {
+      this.garments.splice(this.garments.indexOf(garment), 1)
+    }
   }
 
   changeBackground(background) {
     this.background = background;
   }
 }
+
+module.exports = Outfit;
