@@ -4,6 +4,14 @@
 }
 
 /* LAYOUT */
+.body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Lakki Reddy', cursive;
+}
 
 .grid-container {
   display: grid;
@@ -27,7 +35,6 @@
   grid-area: column1;
   background-color: #6bf178;
   color: #fff;
-  font-family: 'Lakki Reddy', cursive;
   padding: 0 20px;
 }
 
@@ -52,7 +59,6 @@
 
 .header__title {
   color: #ff5964;
-  font-family: 'Lakki Reddy', cursive;
   text-align: center;
   font-size: 4em;
   text-shadow: .3px .3px 1px #000;
@@ -81,7 +87,6 @@
   box-shadow:  .3px .3px .3px #000;
   background-color: #35a7ff;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.1em;
   text-shadow: .3px .3px .3px #000;
 }
