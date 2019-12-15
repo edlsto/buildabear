@@ -4,7 +4,8 @@
 }
 
 /* LAYOUT */
-.body {
+.body,
+p {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -56,6 +57,11 @@ h2 {
   padding: 10px 0;
   background-color: #35a7ff;
   text-align: center;
+}
+
+button:hover,
+.outfit-card:hover {
+  cursor: pointer;
 }
 
 /* HEADER */
@@ -149,7 +155,20 @@ h2 {
 }
 
 .outfit-card {
-  background-color: blue;
+  background-image: linear-gradient(to right, #ff5964, #ffe74c);
   display: flex;
+  justify-content: space-between;
   width: 60%;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px #fff;
+  font-style: Montserrat;
+}
+
+.column3 h2 {
+  margin-left: 10px;
+}
+
+.fa:hover {
+  color: #ff5964;
 }
