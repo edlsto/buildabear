@@ -16,7 +16,7 @@ h2 {
 
 .grid-container {
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) auto minmax(200px, 1fr);
+  grid-template-columns: minmax(15em, 1fr) auto minmax(15em, 1fr);
   grid-template-rows: 80px auto auto;
   grid-template-areas:
     "header header header"
@@ -29,7 +29,7 @@ h2 {
   grid-area: header;
   background-color: #35a7ff;
   text-align: center;
-  padding-top: 3px;
+  padding-top: 0.2em;
 }
 
 .column1,
@@ -41,7 +41,10 @@ h2 {
 
 .column1 {
   grid-area: column1;
-  padding: 0 20px;
+  background-color: #6bf178;
+  color: #fff;
+  font-family: 'Lakki Reddy', cursive;
+  padding: 0 1.2em;
 }
 
 .column2 {
@@ -54,7 +57,7 @@ h2 {
 
 .footer {
   grid-area: footer;
-  padding: 10px 0;
+  padding: 0.6em 0;
   background-color: #35a7ff;
   text-align: center;
 }
@@ -71,7 +74,6 @@ button:hover,
   text-align: center;
   font-size: 4em;
   text-shadow: .3px .3px 1px #000;
-
 }
 
 .header--secondary-font-color {
@@ -82,7 +84,7 @@ button:hover,
 
 .category-to-add,
 .column3 h2 {
-  margin-top: 30px;
+  margin-top: 1.8em;
 }
 
 .category-to-add__title,
@@ -100,6 +102,18 @@ h2 {
   color: #fff;
   font-size: 1.1em;
   text-shadow: .3px .3px .3px #000;
+  outline: none;
+}
+
+.category-to-add__button:hover {
+  box-shadow: .3px .3px 1px #000;
+  cursor: pointer;
+  background-color: #ff5964;
+}
+
+.category-to-add__button:active {
+  box-shadow: none;
+  outline: 1px solid white;
 }
 
 /* CENTER COLUMN */
