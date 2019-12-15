@@ -33,7 +33,7 @@
 
 .column2 {
   grid-area: column2;
-  background-color: #fff
+  background-color: #6bf178
 }
 
 .column3 {
@@ -85,3 +85,13 @@
   font-size: 1.1em;
   text-shadow: .3px .3px .3px #000;
 }
+
+/* CENTER COLUMN */
+
+.bear-background {
+  margin: 1.5em;
+  background-color: #fff;
+  border-radius: 10%;
+}
+
+/* RIGHT COLUMN */
