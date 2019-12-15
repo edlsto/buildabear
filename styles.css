@@ -31,21 +31,24 @@ h2 {
   padding-top: 3px;
 }
 
-.column1 {
-  grid-area: column1;
+.column1,
+.column2,
+.column3 {
   background-color: #6bf178;
   color: #fff;
+}
+
+.column1 {
+  grid-area: column1;
   padding: 0 20px;
 }
 
 .column2 {
   grid-area: column2;
-  background-color: #6bf178
 }
 
 .column3 {
   grid-area: column3;
-  background-color: #6bf178;
 }
 
 .footer {
@@ -75,7 +78,7 @@ h2 {
   margin-top: 30px;
 }
 
-.category-to-add__title {
+.category-to-add__title, h2 {
   font-size: 1.8em;
   text-shadow: .3px .3px .7px #000;
 }
@@ -126,10 +129,15 @@ h2 {
   display: block;
   height: 3em;
   width: 15em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 .column2 button {
   margin: 1em 0;
+  padding: 0;
+  background-color: #ff5964;
+  color: inherit;
 }
 
 /* RIGHT COLUMN */
