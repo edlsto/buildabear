@@ -4,6 +4,15 @@
 }
 
 /* LAYOUT */
+.body,
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2 {
+  font-family: 'Lakki Reddy', cursive;
+}
 
 .grid-container {
   display: grid;
@@ -23,6 +32,13 @@
   padding-top: 0.2em;
 }
 
+.column1,
+.column2,
+.column3 {
+  background-color: #a6f6ae;
+  color: #fff;
+}
+
 .column1 {
   grid-area: column1;
   background-color: #6bf178;
@@ -33,12 +49,10 @@
 
 .column2 {
   grid-area: column2;
-  background-color: #fff
 }
 
 .column3 {
   grid-area: column3;
-  background-color: #6bf178;
 }
 
 .footer {
@@ -48,11 +62,15 @@
   text-align: center;
 }
 
+button:hover,
+.outfit-card:hover {
+  cursor: pointer;
+}
+
 /* HEADER */
 
 .header__title {
   color: #ff5964;
-  font-family: 'Lakki Reddy', cursive;
   text-align: center;
   font-size: 4em;
   text-shadow: .3px .3px 1px #000;
@@ -64,11 +82,13 @@
 
 /* LEFT COLUMN */
 
-.category-to-add {
+.category-to-add,
+.column3 h2 {
   margin-top: 1.8em;
 }
 
-.category-to-add__title {
+.category-to-add__title,
+h2 {
   font-size: 1.8em;
   text-shadow: .3px .3px .7px #000;
 }
@@ -80,7 +100,6 @@
   box-shadow:  .3px .3px .3px #000;
   background-color: #35a7ff;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.1em;
   text-shadow: .3px .3px .3px #000;
   outline: none;
@@ -95,4 +114,75 @@
 .category-to-add__button:active {
   box-shadow: none;
   outline: 1px solid white;
+}
+
+/* CENTER COLUMN */
+
+.column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wood-border {
+  background-image: url("assets/wood-background.jpg");
+  border-radius: 10%;
+  padding: 0.3em;
+  margin: 1em;
+}
+
+.wood-border,
+.bear-background {
+  border: 2px double #804000;
+}
+
+.bear-background {
+  margin: 1.5em;
+  background-color: #fff;
+  border-radius: 10%;
+}
+
+.bear {
+  height: 28em;
+}
+
+.column2 input,
+.column2 button {
+  display: block;
+  height: 3em;
+  width: 15em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.column2 button {
+  margin: 1em 0;
+  padding: 0;
+  background-color: #ff5964;
+  color: inherit;
+}
+
+/* RIGHT COLUMN */
+.outfit-storage {
+  display: flex;
+  flex-direction: column;
+}
+
+.outfit-card {
+  background-image: linear-gradient(to right, #ff5964, #ffe74c);
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px #fff;
+  font-style: Montserrat;
+}
+
+.column3 h2 {
+  margin-left: 10px;
+}
+
+.fa:hover {
+  color: #ff5964;
 }
