@@ -26,6 +26,9 @@
 .column1 {
   grid-area: column1;
   background-color: #6bf178;
+  color: #fff;
+  font-family: 'Lakki Reddy', cursive;
+  padding: 0 20px;
 }
 
 .column2 {
@@ -58,4 +61,27 @@
 
 .header--secondary-font-color {
   color: #ffe74c;
+}
+
+/* LEFT COLUMN */
+
+.category-to-add {
+  margin-top: 30px;
+}
+
+.category-to-add__title {
+  font-size: 1.8em;
+  text-shadow: .3px .3px .7px #000;
+}
+
+.category-to-add__button {
+  height: 2em;
+  margin: 0 .2em .5em 0;
+  border: none;
+  box-shadow:  .3px .3px .3px #000;
+  background-color: #35a7ff;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1em;
+  text-shadow: .3px .3px .3px #000;
 }
