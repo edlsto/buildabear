@@ -88,10 +88,43 @@
 
 /* CENTER COLUMN */
 
+.column2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wood-border {
+  background-image: url("assets/wood-background.jpg");
+  border-radius: 10%;
+  padding: 0.3em;
+  margin: 1em;
+}
+
+.wood-border,
+.bear-background {
+  border: 2px double #804000;
+}
+
 .bear-background {
   margin: 1.5em;
   background-color: #fff;
   border-radius: 10%;
+}
+
+.bear {
+  height: 28em;
+}
+
+.column2 input,
+.column2 button {
+  display: block;
+  height: 3em;
+  width: 15em;
+}
+
+.column2 button {
+  margin: 1em 0;
 }
 
 /* RIGHT COLUMN */
