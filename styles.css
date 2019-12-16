@@ -140,6 +140,15 @@ h2 {
   margin: 1.5em;
   background-color: #fff;
   border-radius: 10%;
+  position: relative;
+}
+
+.bear-outfits {
+  position: absolute;
+}
+
+.background-images {
+  visibility: hidden;
 }
 
 .bear {
