@@ -216,6 +216,53 @@ h2 {
   color: inherit;
 }
 
+
+.bear-outfits img {
+  position: absolute;
+}
+
+#bowtie {
+  visibility: hidden;
+  height: 15%;
+  top: 200px;
+  left: 160px;
+  transform: rotate(10deg);
+}
+
+#hairbow {
+  visibility: hidden;
+  height: 20%;
+  top: 40px;
+  left: 200px;
+  transform: rotate(20deg);
+}
+
+#necklace {
+  visibility: hidden;
+  height: 12%;
+  top: 205px;
+  left: 140px;
+  transform: rotate(20deg);
+}
+
+#smartwatch {
+  visibility: hidden;
+  height: 17%;
+  top: 180px;
+  left: 72px;
+  transform: rotate(70deg);
+}
+
+#sunglasses {
+  visibility: hidden;
+  height: 12%;
+  top: 125px;
+  left: 160px;
+  transform: rotate(20deg);
+}
+
+
+
 /* RIGHT COLUMN */
 .outfit-storage {
   display: flex;
