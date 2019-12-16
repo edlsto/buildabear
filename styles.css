@@ -140,13 +140,54 @@ h2 {
   background-color: #fff;
   border-radius: 10%;
   position: relative;
-  width: 500px;
   height: 500px;
+  width: 500px;
 }
 
 .bear-outfits img {
   position: absolute;
   visibility: hidden;
+}
+
+.hat {
+  transform: rotate(20deg);
+}
+
+#crown {
+  height: 20%;
+  left: 190px;
+  top: 20px;
+}
+
+#spacehelmet {
+  height: 42%;
+  left: 150px;
+  top: 44px;
+}
+
+#tophat {
+  height: 21%;
+  left: 192px;
+  top: 12px;
+}
+
+#sunhat {
+  height: 21%;
+  left: 192px;
+  top: 12px;
+}
+
+#dress {
+  height: 78%;
+  left: 18px;
+  top: 60px;
+  transform: rotate(10deg);
+}
+
+#vest {
+  height: 80%;
+  left: 18px;
+  top: 56px;
 }
 
 .background-images {
