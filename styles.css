@@ -154,9 +154,9 @@ h2 {
 }
 
 #crown {
+  height: 20%;
   left: 190px;
   top: 20px;
-  height: 20%;
 }
 
 #spacehelmet {
@@ -172,10 +172,22 @@ h2 {
 }
 
 #sunhat {
-  visibility: visible;
   height: 21%;
   left: 192px;
   top: 12px;
+}
+
+#dress {
+  height: 78%;
+  left: 18px;
+  top: 60px;
+  transform: rotate(10deg);
+}
+
+#vest {
+  height: 80%;
+  left: 18px;
+  top: 56px;
 }
 
 .background-images {
