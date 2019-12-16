@@ -140,10 +140,21 @@ h2 {
   background-color: #fff;
   border-radius: 10%;
   position: relative;
+  height: 500px;
+  width: 500px;
 }
 
-.bear-outfits {
+.bear-outfits img {
   position: absolute;
+  visibility: hidden;
+}
+
+#crown {
+  visibility: visible;
+  transform: rotate(20deg);
+  left: 190px;
+  top: 20px;
+  height: 20%;
 }
 
 .background-images {
@@ -152,6 +163,8 @@ h2 {
 
 .bear {
   height: 28em;
+  position: absolute;
+  top: 30px;
 }
 
 .column2 input,
