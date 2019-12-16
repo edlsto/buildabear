@@ -150,11 +150,25 @@ h2 {
 }
 
 #crown {
-  visibility: visible;
   transform: rotate(20deg);
   left: 190px;
   top: 20px;
   height: 20%;
+}
+
+#spacehelmet {
+  transform: rotate(20deg);
+  height: 42%;
+  left: 150px;
+  top: 44px;
+}
+
+#tophat {
+  visibility: visible;
+  transform: rotate(20deg);
+  height: 21%;
+  left: 192px;
+  top: 12px;
 }
 
 .background-images {
