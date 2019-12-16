@@ -2,11 +2,14 @@ var outfits = [];
 var id = 0;
 var hatBox = document.getElementById('hat-box');
 var hatsBtns = document.querySelectorAll('.hats-btn');
+var hatImgs = document.querySelectorAll('.hat');
 var clothesBox = document.getElementById('clothes-box');
 var clothesBtns = document.querySelectorAll('.clothes-btn');
 var column1 = document.querySelector('.column1');
 var accessoriesBox = document.getElementById('accessories-box');
 var accessoriesBtns = document.querySelectorAll('.accessories-btn');
+var tophatImg = document.getElementById('tophat-img');
+var tophatBtn = document.getElementById('tophat-btn');
 
 createOutfit();
 
@@ -23,15 +26,16 @@ column1.addEventListener('click', function() {
 });
 
 hatBox.addEventListener('click', function() {
-  toggleButtonClass(event, 'hats-btn', hatsBtns);
+  toggleBtnClass(event, 'hats-btn', hatsBtns);
+  linkBtnToGarment(tophatBtn, tophatImg, hatImgs);
 });
 
 accessoriesBox.addEventListener('click', function() {
-  toggleButtonClass(event, 'accessories-btn', accessoriesBtns);
+  toggleBtnClass(event, 'accessories-btn', accessoriesBtns);
 });
 
 clothesBox.addEventListener('click', function() {
-  toggleButtonClass(event, 'clothes-btn', clothesBtns);
+  toggleBtnClass(event, 'clothes-btn', clothesBtns);
 });
 
 //We may want to use IDs instead of innerText for this when we refactor
@@ -60,7 +64,7 @@ function addGarment(event, button) {
 
 
 
-function toggleButtonClass(event, buttonClass, buttonList) {
+function toggleBtnClass(event, buttonClass, buttonList) {
   if (event.target.classList.contains(buttonClass)) {
     event.target.classList.toggle('active');
     // linkButtonToGarment()
@@ -76,12 +80,12 @@ function removeActiveBtnStates(buttonList) {
   }
 }
 
-// linkButtonToGarment(tophatBtn, tophatImg);
-// var tophatImg = document.getElementById('tophat-img')
-// // linkButtonToGarment('tophat-btn', tophatImg);
-//
-// function linkButtonToGarment(btn, garment){
-//   if (event.target.id === btn) {
-//     garment.classList.add('visible');
-//   }
-// }
+
+function linkBtnToGarment(btn, garment, imgList){
+  for (var i =0; i < imgList.length; i++) {
+    imgList[i].classList.remove('visible');
+  }
+  if (event.target === btn) {
+    garment.classList.toggle('visible');
+  }
+}
