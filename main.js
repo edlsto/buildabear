@@ -19,7 +19,9 @@ column1.addEventListener('click', function() {
   addGarment(event, 'accessories-btn');
 });
 
-hatBox.addEventListener('click', toggleButtonClass)
+hatBox.addEventListener('click', function() {
+  toggleButtonClass(event)
+});
 
 //We may want to use IDs instead of innerText for this when we refactor
 function addGarment(event, button) {
@@ -34,10 +36,26 @@ function addGarment(event, button) {
   };
 };
 
-
+var buttonList = document.querySelectorAll('.hats-btn');
 
 function toggleButtonClass(event) {
   if (event.target.classList.contains('hats-btn')) {
     event.target.classList.toggle('active');
+    console.log(event.target);
+    for (var i =0; i < buttonList.length; i++) {
+      if (buttonList[i] !== event.target) {
+        buttonList[i].classList.remove('active');
+      }
+    }
+    // linkButtonToGarment()
+  }
+}
+
+// linkButtonToGarment(tophatBtn, tophatImg);
+
+
+function linkButtonToGarment(btn, garment){
+  if (event.target.id === btn) {
+    garment.classList.add('visible');
   }
 }
