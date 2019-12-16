@@ -1,9 +1,12 @@
 var outfits = [];
 var id = 0;
 var hatBox = document.getElementById('hat-box');
+var hatsBtns = document.querySelectorAll('.hats-btn');
 var clothesBox = document.getElementById('clothes-box');
+var clothesBtns = document.querySelectorAll('.clothes-btn');
 var column1 = document.querySelector('.column1');
 var accessoriesBox = document.getElementById('accessories-box');
+var accessoriesBtns = document.querySelectorAll('.accessories-btn');
 
 createOutfit();
 
@@ -20,7 +23,15 @@ column1.addEventListener('click', function() {
 });
 
 hatBox.addEventListener('click', function() {
-  toggleButtonClass(event)
+  toggleButtonClass(event, 'hats-btn', hatsBtns);
+});
+
+accessoriesBox.addEventListener('click', function() {
+  toggleButtonClass(event, 'accessories-btn', accessoriesBtns);
+});
+
+clothesBox.addEventListener('click', function() {
+  toggleButtonClass(event, 'clothes-btn', clothesBtns);
 });
 
 //We may want to use IDs instead of innerText for this when we refactor
@@ -36,26 +47,41 @@ function addGarment(event, button) {
   };
 };
 
-var buttonList = document.querySelectorAll('.hats-btn');
 
-function toggleButtonClass(event) {
-  if (event.target.classList.contains('hats-btn')) {
+
+// function toggleButtonClass(event) {
+//   if (event.target.classList.contains('hats-btn')) {
+//     event.target.classList.toggle('active');
+//     console.log(event.target);
+//     // linkButtonToGarment()
+//     removeActiveBtnStates(hatsBtns);
+//   }
+// }
+
+
+
+function toggleButtonClass(event, buttonClass, buttonList) {
+  if (event.target.classList.contains(buttonClass)) {
     event.target.classList.toggle('active');
-    console.log(event.target);
-    for (var i =0; i < buttonList.length; i++) {
-      if (buttonList[i] !== event.target) {
-        buttonList[i].classList.remove('active');
-      }
-    }
     // linkButtonToGarment()
+    removeActiveBtnStates(buttonList);
+  }
+}
+
+function removeActiveBtnStates(buttonList) {
+  for (var i =0; i < buttonList.length; i++) {
+    if (buttonList[i] !== event.target) {
+      buttonList[i].classList.remove('active');
+    }
   }
 }
 
 // linkButtonToGarment(tophatBtn, tophatImg);
-
-
-function linkButtonToGarment(btn, garment){
-  if (event.target.id === btn) {
-    garment.classList.add('visible');
-  }
-}
+// var tophatImg = document.getElementById('tophat-img')
+// // linkButtonToGarment('tophat-btn', tophatImg);
+//
+// function linkButtonToGarment(btn, garment){
+//   if (event.target.id === btn) {
+//     garment.classList.add('visible');
+//   }
+// }
