@@ -104,7 +104,8 @@ h2 {
   outline: none;
 }
 
-.category-to-add__button:hover {
+.category-to-add__button:hover,
+.active {
   box-shadow: .3px .3px 1px #000;
   cursor: pointer;
   background-color: #ff5964;
@@ -151,6 +152,10 @@ h2 {
 
 .hat {
   transform: rotate(20deg);
+}
+
+.visible {
+  visibility: visible;
 }
 
 #crown {
