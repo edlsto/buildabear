@@ -1,7 +1,9 @@
 var outfits = [];
 var id = 0;
 
-function createOutfit(title, garments, background) {
+createOutfit();
+
+function createOutfit() {
   id++;
-  outfits.push(new Outfit(id, title, garments, background));
+  outfits.push(new Outfit(id));
 };
