@@ -182,6 +182,12 @@ h2 {
   padding: 0;
   background-color: #ff5964;
   color: inherit;
+  outline: none;
+}
+
+.column2 button.inactive-btn {
+  background-color: #FF989E;
+  cursor: default;
 }
 
 
