@@ -23,28 +23,28 @@ function createOutfit() {
 };
 
 column1.addEventListener('click', function() {
-  addGarment(event, 'hats-btn');
-  addGarment(event, 'clothes-btn');
-  addGarment(event, 'accessories-btn');
+  addGarment('hats-btn');
+  addGarment('clothes-btn');
+  addGarment('accessories-btn');
 });
 
 hatBox.addEventListener('click', function() {
-  linkBtnToGarment("hat");
-  toggleBtnClass(event, 'hats-btn', hatsBtns);
+  addRemoveImages("hat");
+  toggleBtnClass('hats-btn', hatsBtns);
 });
 
 accessoriesBox.addEventListener('click', function() {
-  linkBtnToGarment("accessory");
-  toggleBtnClass(event, 'accessories-btn', accessoriesBtns);
+  addRemoveImages("accessory");
+  toggleBtnClass('accessories-btn', accessoriesBtns);
 });
 
 clothesBox.addEventListener('click', function() {
-  linkBtnToGarment("clothing");
-  toggleBtnClass(event, 'clothes-btn', clothesBtns);
+  addRemoveImages("clothing");
+  toggleBtnClass('clothes-btn', clothesBtns);
 });
 
 //We may want to use IDs instead of innerText for this when we refactor
-function addGarment(event, button) {
+function addGarment(button) {
   var buttonClicked = event.target.innerText;
   var garmentsArray = outfits[outfits.length - 1].garments;
   if (event.target.classList.contains(button)) {
@@ -56,22 +56,9 @@ function addGarment(event, button) {
   };
 };
 
-// function toggleButtonClass(event) {
-//   if (event.target.classList.contains('hats-btn')) {
-//     event.target.classList.toggle('active');
-//     console.log(event.target);
-//     // linkButtonToGarment()
-//     removeActiveBtnStates(hatsBtns);
-//   }
-// }
-
-// var hatBtns = [crownButton, tophatBtn, helmetBtn]
-// var hatImgs = [crown, th, helm];
-
-function toggleBtnClass(event, buttonClass, buttonList) {
+function toggleBtnClass(buttonClass, buttonList) {
   if (event.target.classList.contains(buttonClass)) {
     event.target.classList.toggle('active');
-    // linkButtonToGarment()
     removeActiveBtnStates(buttonList);
   }
 }
@@ -84,7 +71,7 @@ function removeActiveBtnStates(buttonList) {
   }
 }
 
-function linkBtnToGarment(type){
+function addRemoveImages(category){
   //If the target is already active,
   if (event.target.classList.contains('active')) {
      //remove the image associated with it
@@ -97,7 +84,7 @@ function linkBtnToGarment(type){
     //If the target is not already active,
     for (var i = 0; i < images.length; i++) {
       //Loop through the images and remove them from the category
-      if (images[i].classList.contains(type)) {
+      if (images[i].classList.contains(category)) {
         images[i].classList.remove('visible');
       }
     }
