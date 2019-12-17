@@ -104,7 +104,8 @@ h2 {
   outline: none;
 }
 
-.category-to-add__button:hover {
+.category-to-add__button:hover,
+.active {
   box-shadow: .3px .3px 1px #000;
   cursor: pointer;
   background-color: #ff5964;
@@ -153,38 +154,42 @@ h2 {
   transform: rotate(20deg);
 }
 
-#crown {
+.visible {
+  visibility: visible !important;
+}
+
+#crown-img {
   height: 20%;
   left: 190px;
   top: 20px;
 }
 
-#spacehelmet {
+#spacehelmet-img {
   height: 42%;
   left: 150px;
   top: 44px;
 }
 
-#tophat {
+#tophat-img {
   height: 21%;
   left: 192px;
   top: 12px;
 }
 
-#sunhat {
+#sunhat-img {
   height: 21%;
   left: 192px;
   top: 12px;
 }
 
-#dress {
+#dress-img {
   height: 78%;
   left: 18px;
   top: 60px;
   transform: rotate(10deg);
 }
 
-#vest {
+#vest-img {
   height: 80%;
   left: 18px;
   top: 56px;
@@ -221,40 +226,35 @@ h2 {
   position: absolute;
 }
 
-#bowtie {
-  visibility: hidden;
+#bowtie-img {
   height: 15%;
   top: 200px;
   left: 160px;
   transform: rotate(10deg);
 }
 
-#hairbow {
-  visibility: hidden;
+#hairbow-img {
   height: 20%;
   top: 40px;
   left: 200px;
   transform: rotate(20deg);
 }
 
-#necklace {
-  visibility: hidden;
+#necklace-img {
   height: 12%;
   top: 205px;
   left: 140px;
   transform: rotate(20deg);
 }
 
-#smartwatch {
-  visibility: hidden;
+#smartwatch-img {
   height: 17%;
   top: 180px;
   left: 72px;
   transform: rotate(70deg);
 }
 
-#sunglasses {
-  visibility: hidden;
+#sunglasses-img {
   height: 12%;
   top: 125px;
   left: 160px;
