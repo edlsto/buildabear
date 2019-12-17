@@ -17,7 +17,6 @@ var images = document.querySelectorAll('.bear-outfits > *');
 var saveBtn = document.getElementById('save-btn');
 var outfitInput = document.getElementById('outfit-input');
 var outfitStorage = document.querySelector('.outfit-storage');
-saveBtn.addEventListener('click', clearForm)
 outfitInput.addEventListener('keyup', checkInput)
 
 function clearForm() {
@@ -56,6 +55,8 @@ outfitStorage.addEventListener('click', function() {
 
 saveBtn.addEventListener('click', function() {
   addSavedOutfitCard();
+  clearForm();
+  revertToNaked();
 });
 
 function createOutfit() {
@@ -128,4 +129,13 @@ function addSavedOutfitCard() {
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
+}
+
+
+function revertToNaked() {
+  var visibleGarments = document.querySelectorAll('.visible');
+  for (var i = 0; i < visibleGarments.length; i++) {
+    visibleGarments[i].classList.remove('visible');
+  }
+  createOutfit();
 }
