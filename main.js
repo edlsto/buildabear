@@ -14,6 +14,7 @@ var sunhatBtn = document.getElementById('sunhat-btn');
 var tophatImg = document.getElementById('tophat-img');
 var tophatBtn = document.getElementById('tophat-btn');
 var images = document.querySelectorAll('.bear-outfits > *')
+var saveBtn = document.getElementById('save-btn');
 
 createOutfit();
 
@@ -35,6 +36,10 @@ accessoriesBox.addEventListener('click', function() {
 clothesBox.addEventListener('click', function() {
   addRemoveImages('clothing');
   toggleBtnClass('clothes-btn', clothesBtns);
+});
+
+saveBtn.addEventListener('click', function() {
+  addSavedOutfitCard();
 });
 
 function toggleBtnClass(buttonClass, buttonList) {
@@ -88,14 +93,15 @@ function addRemoveImages(category){
   }
 }
 
-var outfitName = document.getElementById('outfit-input');
+var outfitInput = document.getElementById('outfit-input');
 var outfitStorage = document.querySelector('.outfit-storage');
 
 function addSavedOutfitCard() {
+  var outfitName = outfitInput.value;
   var outfitNameHTML =
   `<section class="outfit-card">
     <p>${outfitName}</p>
     <i class="fa fa-times-circle"></i>
   </section>`
-  outfitStorage.insertAdjacentHTML(afterbegin, outfitNameHTML);
+  outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
 }
