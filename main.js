@@ -16,7 +16,7 @@ var tophatBtn = document.getElementById('tophat-btn');
 var images = document.querySelectorAll('.bear-outfits > *');
 var saveBtn = document.getElementById('save-btn');
 var outfitInput = document.getElementById('outfit-input');
-
+var outfitStorage = document.querySelector('.outfit-storage');
 saveBtn.addEventListener('click', clearForm)
 outfitInput.addEventListener('keyup', checkInput)
 
@@ -35,11 +35,6 @@ function checkInput() {
 
 createOutfit();
 
-function createOutfit() {
-  id++;
-  outfits.push(new Outfit(id));
-};
-
 hatBox.addEventListener('click', function() {
   addRemoveImages('hat');
   toggleBtnClass('hats-btn', hatsBtns);
@@ -54,6 +49,19 @@ clothesBox.addEventListener('click', function() {
   addRemoveImages('clothing');
   toggleBtnClass('clothes-btn', clothesBtns);
 });
+
+outfitStorage.addEventListener('click', function() {
+  removeOutfitCard(event);
+});
+
+saveBtn.addEventListener('click', function() {
+  addSavedOutfitCard();
+});
+
+function createOutfit() {
+  id++;
+  outfits.push(new Outfit(id));
+};
 
 function toggleBtnClass(buttonClass, buttonList) {
   if (event.target.classList.contains(buttonClass)) {
@@ -104,4 +112,20 @@ function addRemoveImages(category){
     checkInactiveTarget(category);
     findMatchingButton();
   }
+}
+
+function removeOutfitCard(event) {
+  if (event.target.classList.contains('fa')) {
+    event.target.parentNode.remove();
+  }
+}
+
+function addSavedOutfitCard() {
+  var outfitName = outfitInput.value;
+  var outfitNameHTML =
+  `<section class="outfit-card">
+    <p>${outfitName}</p>
+    <i class="fa fa-times-circle"></i>
+  </section>`
+  outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
 }
