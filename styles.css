@@ -226,35 +226,35 @@ h2 {
   position: absolute;
 }
 
-#bowtie {
+#bowtie-img {
   height: 15%;
   top: 200px;
   left: 160px;
   transform: rotate(10deg);
 }
 
-#hairbow {
+#hairbow-img {
   height: 20%;
   top: 40px;
   left: 200px;
   transform: rotate(20deg);
 }
 
-#necklace {
+#necklace-img {
   height: 12%;
   top: 205px;
   left: 140px;
   transform: rotate(20deg);
 }
 
-#smartwatch {
+#smartwatch-img {
   height: 17%;
   top: 180px;
   left: 72px;
   transform: rotate(70deg);
 }
 
-#sunglasses {
+#sunglasses-img {
   height: 12%;
   top: 125px;
   left: 160px;
