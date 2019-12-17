@@ -88,8 +88,8 @@ function addRemoveImages(category){
   }
 }
 
-var outfitName = document.getElementById
-var outfitStorage = document.querySelector('.outfit-storage')
+var outfitName = document.getElementById('outfit-input');
+var outfitStorage = document.querySelector('.outfit-storage');
 
 function addSavedOutfitCard() {
   var outfitNameHTML =
