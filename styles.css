@@ -185,11 +185,10 @@ h2 {
   outline: none;
 }
 
-.column2 button.inactive-btn {
+.column2 button[disabled] {
   background-color: #FF989E;
   cursor: default;
 }
-
 
 .bear-outfits img {
   position: absolute;
