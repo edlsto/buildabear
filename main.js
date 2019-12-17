@@ -96,6 +96,16 @@ function addRemoveImages(category){
 var outfitInput = document.getElementById('outfit-input');
 var outfitStorage = document.querySelector('.outfit-storage');
 
+outfitStorage.addEventListener('click', function() {
+  removeOutfitCard(event);
+});
+
+function removeOutfitCard(event) {
+  if (event.target.classList.contains('fa')) {
+    event.target.parentNode.remove();
+  }
+}
+
 function addSavedOutfitCard() {
   var outfitName = outfitInput.value;
   var outfitNameHTML =
