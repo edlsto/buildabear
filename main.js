@@ -13,13 +13,14 @@ var sunhatBtn = document.getElementById('sunhat-btn');
 var tophatImg = document.getElementById('tophat-img');
 var tophatBtn = document.getElementById('tophat-btn');
 
+var images = document.querySelectorAll('.bear-outfits > *')
+
 createOutfit();
 
 function createOutfit() {
   id++;
   outfits.push(new Outfit(id));
 };
-
 
 column1.addEventListener('click', function() {
   addGarment(event, 'hats-btn');
@@ -28,16 +29,17 @@ column1.addEventListener('click', function() {
 });
 
 hatBox.addEventListener('click', function() {
+  linkBtnToGarment("hat");
   toggleBtnClass(event, 'hats-btn', hatsBtns);
-  linkBtnToGarment(tophatBtn, tophatImg, hatImgs);
-  linkBtnToGarment(sunhatBtn, sunhatImg, hatImgs);
 });
 
 accessoriesBox.addEventListener('click', function() {
+  linkBtnToGarment("accessory");
   toggleBtnClass(event, 'accessories-btn', accessoriesBtns);
 });
 
 clothesBox.addEventListener('click', function() {
+  linkBtnToGarment("clothing");
   toggleBtnClass(event, 'clothes-btn', clothesBtns);
 });
 
@@ -53,8 +55,6 @@ function addGarment(event, button) {
     };
   };
 };
-
-
 
 // function toggleButtonClass(event) {
 //   if (event.target.classList.contains('hats-btn')) {
@@ -84,13 +84,28 @@ function removeActiveBtnStates(buttonList) {
   }
 }
 
-
-function linkBtnToGarment(btn, garment, imgList){
-  // for (var i =0; i < imgList.length; i++) {
-  //   imgList[i].classList.remove('visible');
-  // }
-
-  if (event.target === btn) {
-    garment.classList.toggle('visible');
+function linkBtnToGarment(type){
+  //If the target is already active,
+  if (event.target.classList.contains('active')) {
+     //remove the image associated with it
+    for (var i = 0; i < images.length; i++) {
+      if (event.target.classList.contains(images[i].id)) {
+        images[i].classList.remove('visible');
+      }
+    }
+  } else {
+    //If the target is not already active,
+    for (var i = 0; i < images.length; i++) {
+      //Loop through the images and remove them from the category
+      if (images[i].classList.contains(type)) {
+        images[i].classList.remove('visible');
+      }
+    }
+    for (var i = 0; i < images.length; i++) {
+      //Loop through the images, find the one that matches the button
+      if (event.target.classList.contains(images[i].id)) {
+        images[i].classList.add('visible');
+      }
+    }
   }
 }
