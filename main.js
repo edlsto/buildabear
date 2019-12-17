@@ -24,8 +24,7 @@ function createOutfit() {
 
 hatBox.addEventListener('click', function() {
   addRemoveImages('hat');
-  toggleBtnClass('hats-btn', hatsBtns)
-  stuff();
+  toggleBtnClass('hats-btn', hatsBtns);
 });
 
 accessoriesBox.addEventListener('click', function() {
