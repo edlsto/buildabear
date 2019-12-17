@@ -87,3 +87,15 @@ function addRemoveImages(category){
     findMatchingButton();
   }
 }
+
+var outfitName = document.getElementById
+var outfitStorage = document.querySelector('.outfit-storage')
+
+function addSavedOutfitCard() {
+  var outfitNameHTML =
+  `<section class="outfit-card">
+    <p>${outfitName}</p>
+    <i class="fa fa-times-circle"></i>
+  </section>`
+  outfitStorage.insertAdjacentHTML(afterbegin, outfitNameHTML);
+}
