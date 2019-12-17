@@ -17,18 +17,40 @@ var images = document.querySelectorAll('.bear-outfits > *');
 var saveBtn = document.getElementById('save-btn');
 var outfitInput = document.getElementById('outfit-input');
 var outfitStorage = document.querySelector('.outfit-storage');
-outfitInput.addEventListener('keyup', checkInput)
+var bearBackground = document.querySelector('.bear-background');
+var backgroundBtnBox = document.querySelector('.background-btns');
+var backgroundBtns = document.querySelectorAll('.background-btn')
+
+backgroundBtnBox.addEventListener('click', function() {
+  changeBackground();
+  toggleBtnClass('background-btn', backgroundBtns);
+});
+
+function changeBackground() {
+  if (event.target.id === "beach") {
+    bearBackground.style.backgroundImage = "url('assets/beach.png')";
+  } else if (event.target.id === "hearts") {
+    bearBackground.style.backgroundImage = "url('assets/hearts.png')";
+  } else if (event.target.id === "outerspace") {
+    bearBackground.style.backgroundImage = "url('assets/outerspace.png')";
+  } else if (event.target.id === "park") {
+    bearBackground.style.backgroundImage = "url('assets/park.png')";
+  }
+}
+
+outfitInput.addEventListener('keyup', checkInput);
+
 
 function clearForm() {
-  outfitInput.value = "";
-  saveBtn.setAttribute("disabled", "disabled");
+  outfitInput.value = '';
+  saveBtn.setAttribute('disabled', 'disabled');
 }
 
 function checkInput() {
-  if (outfitInput.value !== "") {
-    saveBtn.removeAttribute("disabled")
+  if (outfitInput.value !== '') {
+    saveBtn.removeAttribute('disabled')
   } else {
-    saveBtn.setAttribute("disabled", "disabled")
+    saveBtn.setAttribute('disabled', 'disabled')
   }
 }
 
