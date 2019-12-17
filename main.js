@@ -13,7 +13,25 @@ var sunhatImg = document.getElementById('sunhat-img');
 var sunhatBtn = document.getElementById('sunhat-btn');
 var tophatImg = document.getElementById('tophat-img');
 var tophatBtn = document.getElementById('tophat-btn');
-var images = document.querySelectorAll('.bear-outfits > *')
+var images = document.querySelectorAll('.bear-outfits > *');
+var saveBtn = document.getElementById('save-btn');
+var outfitInput = document.getElementById('outfit-input');
+
+saveBtn.addEventListener('click', clearForm)
+outfitInput.addEventListener('keyup', checkInput)
+
+function clearForm() {
+  outfitInput.value = "";
+  saveBtn.classList.add('inactive-btn');
+}
+
+function checkInput() {
+  if (outfitInput.value !== "") {
+    saveBtn.classList.remove('inactive-btn')
+  } else {
+    saveBtn.classList.add('inactive-btn')
+  }
+}
 
 createOutfit();
 
