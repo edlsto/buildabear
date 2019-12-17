@@ -8,6 +8,8 @@ var clothesBtns = document.querySelectorAll('.clothes-btn');
 var column1 = document.querySelector('.column1');
 var accessoriesBox = document.getElementById('accessories-box');
 var accessoriesBtns = document.querySelectorAll('.accessories-btn');
+var sunhatImg = document.getElementById('sunhat-img');
+var sunhatBtn = document.getElementById('sunhat-btn');
 var tophatImg = document.getElementById('tophat-img');
 var tophatBtn = document.getElementById('tophat-btn');
 
@@ -28,6 +30,7 @@ column1.addEventListener('click', function() {
 hatBox.addEventListener('click', function() {
   toggleBtnClass(event, 'hats-btn', hatsBtns);
   linkBtnToGarment(tophatBtn, tophatImg, hatImgs);
+  linkBtnToGarment(sunhatBtn, sunhatImg, hatImgs);
 });
 
 accessoriesBox.addEventListener('click', function() {
@@ -62,7 +65,8 @@ function addGarment(event, button) {
 //   }
 // }
 
-
+// var hatBtns = [crownButton, tophatBtn, helmetBtn]
+// var hatImgs = [crown, th, helm];
 
 function toggleBtnClass(event, buttonClass, buttonList) {
   if (event.target.classList.contains(buttonClass)) {
@@ -82,9 +86,10 @@ function removeActiveBtnStates(buttonList) {
 
 
 function linkBtnToGarment(btn, garment, imgList){
-  for (var i =0; i < imgList.length; i++) {
-    imgList[i].classList.remove('visible');
-  }
+  // for (var i =0; i < imgList.length; i++) {
+  //   imgList[i].classList.remove('visible');
+  // }
+
   if (event.target === btn) {
     garment.classList.toggle('visible');
   }
