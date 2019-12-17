@@ -22,14 +22,14 @@ outfitInput.addEventListener('keyup', checkInput)
 
 function clearForm() {
   outfitInput.value = "";
-  saveBtn.classList.add('inactive-btn');
+  saveBtn.setAttribute("disabled", "disabled");
 }
 
 function checkInput() {
   if (outfitInput.value !== "") {
-    saveBtn.classList.remove('inactive-btn')
+    saveBtn.removeAttribute("disabled")
   } else {
-    saveBtn.classList.add('inactive-btn')
+    saveBtn.setAttribute("disabled", "disabled")
   }
 }
 
