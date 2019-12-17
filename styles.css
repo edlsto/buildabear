@@ -158,43 +158,6 @@ h2 {
   visibility: visible !important;
 }
 
-#crown-img {
-  height: 20%;
-  left: 190px;
-  top: 20px;
-}
-
-#spacehelmet-img {
-  height: 42%;
-  left: 150px;
-  top: 44px;
-}
-
-#tophat-img {
-  height: 21%;
-  left: 192px;
-  top: 12px;
-}
-
-#sunhat-img {
-  height: 21%;
-  left: 192px;
-  top: 12px;
-}
-
-#dress-img {
-  height: 78%;
-  left: 18px;
-  top: 60px;
-  transform: rotate(10deg);
-}
-
-#vest-img {
-  height: 80%;
-  left: 18px;
-  top: 56px;
-}
-
 .background-images {
   visibility: hidden;
 }
@@ -226,42 +189,77 @@ h2 {
   position: absolute;
 }
 
-#bowtie-img {
+#crown {
+  height: 20%;
+  left: 190px;
+  top: 20px;
+}
+
+#spacehelmet {
+  height: 42%;
+  left: 150px;
+  top: 44px;
+}
+
+#tophat {
+  height: 21%;
+  left: 192px;
+  top: 12px;
+}
+
+#sunhat {
+  height: 38%;
+  left: 170px;
+  top: 20px;
+}
+
+#dress {
+  height: 78%;
+  left: 18px;
+  top: 60px;
+  transform: rotate(10deg);
+}
+
+#vest {
+  height: 80%;
+  left: 18px;
+  top: 56px;
+}
+
+#bowtie {
   height: 15%;
   top: 200px;
   left: 160px;
   transform: rotate(10deg);
 }
 
-#hairbow-img {
+#hairbow {
   height: 20%;
   top: 40px;
   left: 200px;
   transform: rotate(20deg);
 }
 
-#necklace-img {
+#necklace {
   height: 12%;
   top: 205px;
   left: 140px;
   transform: rotate(20deg);
 }
 
-#smartwatch-img {
+#smartwatch {
   height: 17%;
   top: 180px;
   left: 72px;
   transform: rotate(70deg);
 }
 
-#sunglasses-img {
+#sunglasses {
   height: 12%;
   top: 125px;
   left: 160px;
   transform: rotate(20deg);
 }
-
-
 
 /* RIGHT COLUMN */
 .outfit-storage {

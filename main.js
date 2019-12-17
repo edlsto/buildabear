@@ -2,6 +2,7 @@ var outfits = [];
 var id = 0;
 var hatBox = document.getElementById('hat-box');
 var hatsBtns = document.querySelectorAll('.hats-btn');
+var tophatBtn = document.getElementById('tophat-btn');
 var hatImgs = document.querySelectorAll('.hat');
 var clothesBox = document.getElementById('clothes-box');
 var clothesBtns = document.querySelectorAll('.clothes-btn');
@@ -22,17 +23,17 @@ function createOutfit() {
 };
 
 hatBox.addEventListener('click', function() {
-  addRemoveImages("hat");
+  addRemoveImages('hat');
   toggleBtnClass('hats-btn', hatsBtns);
 });
 
 accessoriesBox.addEventListener('click', function() {
-  addRemoveImages("accessory");
+  addRemoveImages('accessory');
   toggleBtnClass('accessories-btn', accessoriesBtns);
 });
 
 clothesBox.addEventListener('click', function() {
-  addRemoveImages("clothing");
+  addRemoveImages('clothing');
   toggleBtnClass('clothes-btn', clothesBtns);
 });
 
@@ -51,34 +52,38 @@ function removeActiveBtnStates(buttonList) {
   }
 }
 
+function removeAssociatedImage() {
+  for (var i = 0; i < images.length; i++) {
+    if (event.target.classList.contains(images[i].id)) {
+      images[i].classList.remove('visible');
+      outfits[outfits.length - 1].removeGarment(images[i].id);
+    }
+  }
+}
+
+function checkInactiveTarget(category) {
+  for (var i = 0; i < images.length; i++) {
+    if (images[i].classList.contains(category)) {
+      images[i].classList.remove('visible');
+      outfits[outfits.length - 1].removeGarment(images[i].id);
+    }
+  }
+}
+
+function findMatchingButton(){
+  for (var i = 0; i < images.length; i++) {
+    if (event.target.classList.contains(images[i].id)) {
+      images[i].classList.add('visible');
+      outfits[outfits.length-1].addGarment(images[i].id);
+    }
+  }
+}
+
 function addRemoveImages(category){
-  //If the target is already active,
   if (event.target.classList.contains('active')) {
-     //remove the image associated with it
-    for (var i = 0; i < images.length; i++) {
-      if (event.target.classList.contains(images[i].id)) {
-        images[i].classList.remove('visible');
-        //update the data model
-        outfits[outfits.length - 1].removeGarment(images[i].id);
-      }
-    }
+    removeAssociatedImage();
   } else {
-    //If the target is not already active,
-    for (var i = 0; i < images.length; i++) {
-      //Loop through the images and remove them from the category
-      if (images[i].classList.contains(category)) {
-        images[i].classList.remove('visible');
-        //update the data model
-        outfits[outfits.length - 1].removeGarment(images[i].id);
-      }
-    }
-    for (var i = 0; i < images.length; i++) {
-      //Loop through the images, find the one that matches the button
-      if (event.target.classList.contains(images[i].id)) {
-        images[i].classList.add('visible');
-        //update the data model
-        outfits[outfits.length-1].addGarment(images[i].id);
-      }
-    }
+    checkInactiveTarget(category);
+    findMatchingButton();
   }
 }
