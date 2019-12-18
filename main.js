@@ -54,7 +54,7 @@ function checkInput() {
   }
 }
 
-createOutfit();
+checkForSavedCards();
 
 hatBox.addEventListener('click', function() {
   addRemoveImages('hat');
@@ -76,10 +76,32 @@ outfitStorage.addEventListener('click', function() {
 });
 
 saveBtn.addEventListener('click', function() {
-  addSavedOutfitCard();
+  createNewNameCard();
   clearForm();
   revertToNaked();
 });
+
+//After we save each outfit card
+//Use local storage to save our outfits array into localstorage
+//Right before we create a new out
+
+function checkForSavedCards() {
+  if (localStorage.outfits === undefined) {
+    createOutfit();
+  } else {
+    var retrievedOutfits = localStorage.getItem('outfits');
+    var parsedOutfits = JSON.parse(retrievedOutfits);
+    for (var i = 0; i < parsedOutfits.length; i++) {
+      addSavedOutfitCard(parsedOutfits[i].id, parsedOutfits[i].title);
+    }
+    outfits = parsedOutfits;
+    localStorage.setItem('outfits', JSON.stringify(outfits));
+    id = outfits[outfits.length - 1].id;
+    createOutfit();
+  }
+}
+
+
 
 function createOutfit() {
   id++;
@@ -140,18 +162,27 @@ function addRemoveImages(category){
 function removeOutfitCard(event) {
   if (event.target.classList.contains('fa')) {
     event.target.parentNode.remove();
+
   }
 }
 
-function addSavedOutfitCard() {
-  var outfitName = outfitInput.value;
+function addSavedOutfitCard(id, title) {
+  var outfitName = title;
   var outfitNameHTML =
-  `<section class="outfit-card">
+  `<section id="${id}" class="outfit-card">
     <p>${outfitName}</p>
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
+  localStorage.setItem('outfits', JSON.stringify(outfits));
 }
+
+function createNewNameCard() {
+  var outfitName = outfitInput.value;
+  outfits[outfits.length - 1].title = outfitName;
+  addSavedOutfitCard(outfits[outfits.length - 1].id, outfitName);
+}
+
 
 
 function revertToNaked() {
