@@ -1,3 +1,4 @@
+var currentOutfit;
 var outfits = [];
 var id = 0;
 var hatBox = document.getElementById('hat-box');
@@ -27,14 +28,18 @@ backgroundBtnBox.addEventListener('click', function() {
 });
 
 function changeBackground() {
-  if (event.target.id === "beach") {
-    bearBackground.style.backgroundImage = "url('assets/beach.png')";
-  } else if (event.target.id === "hearts") {
-    bearBackground.style.backgroundImage = "url('assets/hearts.png')";
-  } else if (event.target.id === "outerspace") {
-    bearBackground.style.backgroundImage = "url('assets/outerspace.png')";
+  if (event.target.id === 'beach') {
+    bearBackground.style.backgroundImage = 'url("assets/beach.png")';
+    currentOutfit.background = 'beach';
+  } else if (event.target.id === 'hearts') {
+    bearBackground.style.backgroundImage = 'url("assets/hearts.png")';
+    currentOutfit.background = 'hearts';
+  } else if (event.target.id === 'outerspace') {
+    bearBackground.style.backgroundImage = 'url("assets/outerspace.png")';
+    currentOutfit.background = 'outerspace';
   } else if (event.target.id === "park") {
-    bearBackground.style.backgroundImage = "url('assets/park.png')";
+    bearBackground.style.backgroundImage = 'url("assets/park.png")';
+    currentOutfit.background = 'park';
   }
 }
 
@@ -76,6 +81,7 @@ outfitStorage.addEventListener('click', function() {
 });
 
 saveBtn.addEventListener('click', function() {
+  pushCurrentOutfitToArray();
   createNewNameCard();
   clearForm();
   revertToNaked();
@@ -105,7 +111,7 @@ function checkForSavedCards() {
 
 function createOutfit() {
   id++;
-  outfits.push(new Outfit(id));
+  currentOutfit = new Outfit(id);
 };
 
 function toggleBtnClass(buttonClass, buttonList) {
@@ -127,7 +133,7 @@ function removeAssociatedImage() {
   for (var i = 0; i < images.length; i++) {
     if (event.target.classList.contains(images[i].id)) {
       images[i].classList.remove('visible');
-      outfits[outfits.length - 1].removeGarment(images[i].id);
+      currentOutfit.removeGarment(images[i].id);
     }
   }
 }
@@ -136,7 +142,7 @@ function checkInactiveTarget(category) {
   for (var i = 0; i < images.length; i++) {
     if (images[i].classList.contains(category)) {
       images[i].classList.remove('visible');
-      outfits[outfits.length - 1].removeGarment(images[i].id);
+      currentOutfit.removeGarment(images[i].id);
     }
   }
 }
@@ -145,7 +151,7 @@ function findMatchingButton(){
   for (var i = 0; i < images.length; i++) {
     if (event.target.classList.contains(images[i].id)) {
       images[i].classList.add('visible');
-      outfits[outfits.length-1].addGarment(images[i].id);
+      currentOutfit.addGarment(images[i].id);
     }
   }
 }
@@ -179,8 +185,14 @@ function addSavedOutfitCard(id, title) {
 
 function createNewNameCard() {
   var outfitName = outfitInput.value;
-  outfits[outfits.length - 1].title = outfitName;
-  addSavedOutfitCard(outfits[outfits.length - 1].id, outfitName);
+  currentOutfit.title = outfitName;
+  addSavedOutfitCard(currentOutfit.id, outfitName);
+}
+
+function pushCurrentOutfitToArray() {
+  if (currentOutfit.garments !== [] || currentOutfit.background !== '') {
+    outfits.push(currentOutfit);
+  }
 }
 
 
@@ -190,5 +202,10 @@ function revertToNaked() {
   for (var i = 0; i < visibleGarments.length; i++) {
     visibleGarments[i].classList.remove('visible');
   }
+  bearBackground.style.backgroundImage = '';
+  removeActiveBtnStates(hatsBtns);
+  removeActiveBtnStates(clothesBtns);
+  removeActiveBtnStates(accessoriesBtns);
+  removeActiveBtnStates(backgroundBtns);
   createOutfit();
 }
