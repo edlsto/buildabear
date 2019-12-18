@@ -153,7 +153,7 @@ function addSavedOutfitCard() {
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
   outfits[outfits.length - 1].title = outfitName;
-  localStorage.setItem(outfitName, JSON.stringify(outfits[outfits.length - 1]));
+  localStorage.setItem('Outfits', JSON.stringify(outfits));
 }
 
 var outfitCardNames = document.querySelectorAll('.outfit-card p');
