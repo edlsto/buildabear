@@ -76,7 +76,7 @@ outfitStorage.addEventListener('click', function() {
 });
 
 saveBtn.addEventListener('click', function() {
-  addSavedOutfitCard();
+  createNewNameCard();
   clearForm();
   revertToNaked();
 });
@@ -161,8 +161,6 @@ function removeOutfitCard(event) {
   }
 }
 
-addSavedOutfitCard(outfits[length - 1].id, outfitInput.value);
-
 function addSavedOutfitCard(id, title) {
   var outfitName = title;
   var outfitNameHTML =
@@ -171,9 +169,15 @@ function addSavedOutfitCard(id, title) {
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
-  outfits[outfits.length - 1].title = outfitName;
   localStorage.setItem('outfits', JSON.stringify(outfits));
 }
+
+function createNewNameCard() {
+  var outfitName = outfitInput.value;
+  outfits[outfits.length - 1].title = outfitName;
+  addSavedOutfitCard(outfits[length - 1].id, outfitName);
+}
+
 
 
 function revertToNaked() {
