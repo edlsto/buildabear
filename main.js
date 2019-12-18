@@ -198,6 +198,16 @@ function accessOutfits(event){
   }
 }
 
+function checkForGarments(obj) {
+  for (var i = 0; i < images.length; i++) {
+    if (obj.garments.indexOf(images[i].id) > -1) {
+      images[i].classList.add('visible');
+    } else {
+      images[i].classList.remove('visible');
+    }
+  }
+}
+
 function createNewNameCard() {
   var outfitName = outfitInput.value;
   currentOutfit.title = outfitName;
