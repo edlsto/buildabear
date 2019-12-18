@@ -1,3 +1,4 @@
+var currentOutfit;
 var outfits = [];
 var id = 0;
 var hatBox = document.getElementById('hat-box');
@@ -76,6 +77,7 @@ outfitStorage.addEventListener('click', function() {
 });
 
 saveBtn.addEventListener('click', function() {
+  pushCurrentOutfitToArray();
   createNewNameCard();
   clearForm();
   revertToNaked();
@@ -105,7 +107,7 @@ function checkForSavedCards() {
 
 function createOutfit() {
   id++;
-  outfits.push(new Outfit(id));
+  currentOutfit = new Outfit(id);
 };
 
 function toggleBtnClass(buttonClass, buttonList) {
@@ -127,7 +129,7 @@ function removeAssociatedImage() {
   for (var i = 0; i < images.length; i++) {
     if (event.target.classList.contains(images[i].id)) {
       images[i].classList.remove('visible');
-      outfits[outfits.length - 1].removeGarment(images[i].id);
+      currentOutfit.removeGarment(images[i].id);
     }
   }
 }
@@ -136,7 +138,7 @@ function checkInactiveTarget(category) {
   for (var i = 0; i < images.length; i++) {
     if (images[i].classList.contains(category)) {
       images[i].classList.remove('visible');
-      outfits[outfits.length - 1].removeGarment(images[i].id);
+      currentOutfit.removeGarment(images[i].id);
     }
   }
 }
@@ -145,7 +147,7 @@ function findMatchingButton(){
   for (var i = 0; i < images.length; i++) {
     if (event.target.classList.contains(images[i].id)) {
       images[i].classList.add('visible');
-      outfits[outfits.length-1].addGarment(images[i].id);
+      currentOutfit.addGarment(images[i].id);
     }
   }
 }
@@ -179,8 +181,15 @@ function addSavedOutfitCard(id, title) {
 
 function createNewNameCard() {
   var outfitName = outfitInput.value;
-  outfits[outfits.length - 1].title = outfitName;
-  addSavedOutfitCard(outfits[outfits.length - 1].id, outfitName);
+  currentOutfit.title = outfitName;
+  addSavedOutfitCard(currentOutfit.id, outfitName);
+}
+
+function pushCurrentOutfitToArray() {
+  if (currentOutfit.garments !== [] || currentOutfit.background !== "") {
+    console.log("hi")
+    outfits.push(currentOutfit);
+  }
 }
 
 
