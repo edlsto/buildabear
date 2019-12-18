@@ -203,5 +203,9 @@ function revertToNaked() {
     visibleGarments[i].classList.remove('visible');
   }
   bearBackground.style.backgroundImage = '';
+  removeActiveBtnStates(hatsBtns);
+  removeActiveBtnStates(clothesBtns);
+  removeActiveBtnStates(accessoriesBtns);
+  removeActiveBtnStates(backgroundBtns);
   createOutfit();
 }
