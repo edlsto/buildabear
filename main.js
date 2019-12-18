@@ -86,7 +86,7 @@ saveBtn.addEventListener('click', function() {
 //Right before we create a new out
 
 function checkForSavedCards() {
-  if (localStorage.outfits === undefined || localStorage.outfits === []) {
+  if (localStorage.outfits === undefined) {
     createOutfit();
   } else {
     var retrievedOutfits = localStorage.getItem('outfits');
@@ -94,6 +94,10 @@ function checkForSavedCards() {
     for (var i = 0; i < parsedOutfits.length; i++) {
       addSavedOutfitCard(parsedOutfits[i].id, parsedOutfits[i].title);
     }
+    outfits = parsedOutfits;
+    localStorage.setItem('outfits', JSON.stringify(outfits));
+    id = outfits[outfits.length - 1].id;
+    createOutfit();
   }
 }
 
@@ -158,6 +162,7 @@ function addRemoveImages(category){
 function removeOutfitCard(event) {
   if (event.target.classList.contains('fa')) {
     event.target.parentNode.remove();
+
   }
 }
 
@@ -175,7 +180,7 @@ function addSavedOutfitCard(id, title) {
 function createNewNameCard() {
   var outfitName = outfitInput.value;
   outfits[outfits.length - 1].title = outfitName;
-  addSavedOutfitCard(outfits[length - 1].id, outfitName);
+  addSavedOutfitCard(outfits[outfits.length - 1].id, outfitName);
 }
 
 
