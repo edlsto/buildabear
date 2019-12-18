@@ -73,6 +73,7 @@ clothesBox.addEventListener('click', function() {
 
 outfitStorage.addEventListener('click', function() {
   removeOutfitCard(event);
+  accessOutfits(event);
 });
 
 saveBtn.addEventListener('click', function() {
@@ -155,6 +156,13 @@ function addSavedOutfitCard() {
   localStorage.setItem(outfitName, JSON.stringify(outfits[outfits.length - 1]));
 }
 
+var outfitCardNames = document.querySelectorAll('.outfit-card p');
+
+function accessOutfits(event){
+  var outfitToGrab = event.target.innerText;
+  var stringOfOutfitObj = localStorage.getItem(outfitToGrab);
+  var outfitObj = JSON.parse(stringOfOutfitObj);
+}
 
 function revertToNaked() {
   var visibleGarments = document.querySelectorAll('.visible');
