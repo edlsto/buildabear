@@ -78,6 +78,7 @@ clothesBox.addEventListener('click', function() {
 
 outfitStorage.addEventListener('click', function() {
   removeOutfitCard(event);
+
 });
 
 saveBtn.addEventListener('click', function() {
@@ -92,7 +93,7 @@ saveBtn.addEventListener('click', function() {
 //Right before we create a new out
 
 function checkForSavedCards() {
-  if (localStorage.outfits === undefined) {
+  if (localStorage.outfits === "[]" || localStorage.outfits === undefined) {
     createOutfit();
   } else {
     var retrievedOutfits = localStorage.getItem('outfits');
@@ -168,8 +169,17 @@ function addRemoveImages(category){
 function removeOutfitCard(event) {
   if (event.target.classList.contains('fa')) {
     event.target.parentNode.remove();
-
+    var idOfClicked = parseInt(event.target.parentNode.id);
+    for (var i = 0; i < outfits.length; i++) {
+      if (idOfClicked === outfits[i].id) {
+        outfits.splice(i, 1)
+      }
+    }
+    localStorage.setItem('outfits', JSON.stringify(outfits));
   }
+  // if (outfits === []) {
+  //   createOutfit();
+  // }
 }
 
 function addSavedOutfitCard(id, title) {
