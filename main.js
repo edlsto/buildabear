@@ -54,7 +54,7 @@ function checkInput() {
   }
 }
 
-createOutfit();
+checkForSavedCards();
 
 hatBox.addEventListener('click', function() {
   addRemoveImages('hat');
@@ -84,6 +84,19 @@ saveBtn.addEventListener('click', function() {
 //After we save each outfit card
 //Use local storage to save our outfits array into localstorage
 //Right before we create a new out
+
+function checkForSavedCards() {
+  if (localStorage.outfits === undefined || localStorage.outfits === []) {
+    createOutfit();
+  } else {
+    var retrievedOutfits = localStorage.getItem('outfits');
+    var parsedOutfits = JSON.parse(retrievedOutfits);
+    for (var i = 0; i < parsedOutfits.length; i++) {
+      addSavedOutfitCard(parsedOutfits[i].id, parsedOutfits[i].title);
+    }
+  }
+}
+
 
 
 function createOutfit() {
@@ -148,16 +161,18 @@ function removeOutfitCard(event) {
   }
 }
 
-function addSavedOutfitCard() {
-  var outfitName = outfitInput.value;
+addSavedOutfitCard(outfits[length - 1].id, outfitInput.value);
+
+function addSavedOutfitCard(id, title) {
+  var outfitName = title;
   var outfitNameHTML =
-  `<section class="outfit-card">
+  `<section id="${id}" class="outfit-card">
     <p>${outfitName}</p>
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
   outfits[outfits.length - 1].title = outfitName;
-  localStorage.setItem('Outfits', JSON.stringify(outfits));
+  localStorage.setItem('outfits', JSON.stringify(outfits));
 }
 
 
