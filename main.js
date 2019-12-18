@@ -162,6 +162,13 @@ function accessOutfits(event){
   var outfitToGrab = event.target.innerText;
   var stringOfOutfitObj = localStorage.getItem(outfitToGrab);
   var outfitObj = JSON.parse(stringOfOutfitObj);
+  for (var i = 0; i < images.length; i++) {
+    if (outfitObj.garments.indexOf(images[i].id) > -1) {
+      images[i].classList.add('visible');
+    } else {
+      images[i].classList.remove('visible');
+    }
+  }
 }
 
 function revertToNaked() {
