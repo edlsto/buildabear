@@ -88,9 +88,6 @@ saveBtn.addEventListener('click', function() {
   revertToNaked();
 });
 
-//After we save each outfit card
-//Use local storage to save our outfits array into localstorage
-//Right before we create a new out
 
 function checkForSavedCards() {
   if (localStorage.outfits === "[]" || localStorage.outfits === undefined) {
@@ -187,20 +184,16 @@ function addSavedOutfitCard(id, title) {
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
-  localStorage.setItem('Outfits', JSON.stringify(outfits));
+  localStorage.setItem('outfits', JSON.stringify(outfits));
 }
-
-var outfitCardNames = document.querySelectorAll('.outfit-card p');
 
 function accessOutfits(event){
   var outfitToGrab = event.target.innerText;
-  var stringOfOutfitObj = localStorage.getItem(outfitToGrab);
-  var outfitObj = JSON.parse(stringOfOutfitObj);
-  for (var i = 0; i < images.length; i++) {
-    if (outfitObj.garments.indexOf(images[i].id) > -1) {
-      images[i].classList.add('visible');
-    } else {
-      images[i].classList.remove('visible');
+  var stringOfOutfits = localStorage.getItem('outfits');
+  var outfitsArr = JSON.parse(stringOfOutfits);
+  for (var i = 0; i < outfitsArr.length; i++) {
+    if (outfitsArr[i].title === outfitToGrab) {
+      checkForGarments(outfitsArr[i]);
     }
   }
 }
