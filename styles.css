@@ -279,6 +279,11 @@ h2 {
   font-style: Montserrat;
 }
 
+.outfit-card p:hover {
+  text-decoration: underline;
+  color: #35a7ff;
+}
+
 .column3 h2 {
   margin-left: 10px;
 }
