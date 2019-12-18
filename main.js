@@ -20,26 +20,29 @@ var outfitInput = document.getElementById('outfit-input');
 var outfitStorage = document.querySelector('.outfit-storage');
 var bearBackground = document.querySelector('.bear-background');
 var backgroundBtnBox = document.querySelector('.background-btns');
-var backgroundBtns = document.querySelectorAll('.background-btn')
+var backgroundBtns = document.querySelectorAll('.background-btn');
+var backgroundImgs = document.querySelectorAll('.background-btn');
 
 backgroundBtnBox.addEventListener('click', function() {
-  changeBackground();
+  changeBackground(event.target.id);
   toggleBtnClass('background-btn', backgroundBtns);
 });
 
-function changeBackground() {
-  if (event.target.id === 'beach') {
+function changeBackground(selector) {
+  if (selector === 'beach') {
     bearBackground.style.backgroundImage = 'url("assets/beach.png")';
     currentOutfit.background = 'beach';
-  } else if (event.target.id === 'hearts') {
+  } else if (selector === 'hearts') {
     bearBackground.style.backgroundImage = 'url("assets/hearts.png")';
     currentOutfit.background = 'hearts';
-  } else if (event.target.id === 'outerspace') {
+  } else if (selector === 'outerspace') {
     bearBackground.style.backgroundImage = 'url("assets/outerspace.png")';
     currentOutfit.background = 'outerspace';
-  } else if (event.target.id === "park") {
+  } else if (selector === "park") {
     bearBackground.style.backgroundImage = 'url("assets/park.png")';
     currentOutfit.background = 'park';
+  } else if (selector === '') {
+    bearBackground.style.backgroundImage = '';
   }
 }
 
@@ -78,7 +81,7 @@ clothesBox.addEventListener('click', function() {
 
 outfitStorage.addEventListener('click', function() {
   removeOutfitCard(event);
-
+  accessOutfits(event);
 });
 
 saveBtn.addEventListener('click', function() {
@@ -88,9 +91,6 @@ saveBtn.addEventListener('click', function() {
   revertToNaked();
 });
 
-//After we save each outfit card
-//Use local storage to save our outfits array into localstorage
-//Right before we create a new out
 
 function checkForSavedCards() {
   if (localStorage.outfits === "[]" || localStorage.outfits === undefined) {
@@ -177,9 +177,6 @@ function removeOutfitCard(event) {
     }
     localStorage.setItem('outfits', JSON.stringify(outfits));
   }
-  // if (outfits === []) {
-  //   createOutfit();
-  // }
 }
 
 function addSavedOutfitCard(id, title) {
@@ -193,6 +190,32 @@ function addSavedOutfitCard(id, title) {
   localStorage.setItem('outfits', JSON.stringify(outfits));
 }
 
+function accessOutfits(event){
+  var outfitToGrab = event.target.innerText;
+  var stringOfOutfits = localStorage.getItem('outfits');
+  var outfitsArr = JSON.parse(stringOfOutfits);
+  for (var i = 0; i < outfitsArr.length; i++) {
+    if (outfitsArr[i].title === outfitToGrab) {
+      checkForGarments(outfitsArr[i]);
+      changeBackground(outfitsArr[i].background);
+    }
+  }
+}
+
+function checkForGarments(obj) {
+  for (var i = 0; i < images.length; i++) {
+    if (obj.garments.indexOf(images[i].id) > -1) {
+      images[i].classList.add('visible');
+    } else {
+      images[i].classList.remove('visible');
+    }
+  }
+}
+
+function checkForBackgrounds(obj) {
+
+}
+
 function createNewNameCard() {
   var outfitName = outfitInput.value;
   currentOutfit.title = outfitName;
@@ -204,8 +227,6 @@ function pushCurrentOutfitToArray() {
     outfits.push(currentOutfit);
   }
 }
-
-
 
 function revertToNaked() {
   var visibleGarments = document.querySelectorAll('.visible');
