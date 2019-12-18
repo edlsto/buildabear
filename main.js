@@ -156,7 +156,8 @@ function addSavedOutfitCard() {
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
-  
+  outfits[outfits.length - 1].title = outfitName;
+  localStorage.setItem('Outfits', JSON.stringify(outfits));
 }
 
 
@@ -165,7 +166,5 @@ function revertToNaked() {
   for (var i = 0; i < visibleGarments.length; i++) {
     visibleGarments[i].classList.remove('visible');
   }
-  //When we want our outfits array to be saved, Outfits is the key and the stringified array is our value
-  localstorage.setItem('Outfits', JSON.stringify(outfits));
   createOutfit();
 }
