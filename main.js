@@ -151,6 +151,8 @@ function addSavedOutfitCard() {
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
+  outfits[outfits.length - 1].title = outfitName;
+  localStorage.setItem(outfitName, JSON.stringify(outfits[outfits.length - 1]));
 }
 
 
