@@ -81,6 +81,11 @@ saveBtn.addEventListener('click', function() {
   revertToNaked();
 });
 
+//After we save each outfit card
+//Use local storage to save our outfits array into localstorage
+//Right before we create a new out
+
+
 function createOutfit() {
   id++;
   outfits.push(new Outfit(id));
@@ -151,6 +156,7 @@ function addSavedOutfitCard() {
     <i class="fa fa-times-circle"></i>
   </section>`
   outfitStorage.insertAdjacentHTML('afterbegin', outfitNameHTML);
+  
 }
 
 
@@ -159,5 +165,7 @@ function revertToNaked() {
   for (var i = 0; i < visibleGarments.length; i++) {
     visibleGarments[i].classList.remove('visible');
   }
+  //When we want our outfits array to be saved, Outfits is the key and the stringified array is our value
+  localstorage.setItem('Outfits', JSON.stringify(outfits));
   createOutfit();
 }
