@@ -186,6 +186,7 @@ function removeOutfitCard(event) {
       }
     }
     localStorage.setItem('outfits', JSON.stringify(outfits));
+    revertToNaked();
   }
 }
 
