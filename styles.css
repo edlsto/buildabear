@@ -334,6 +334,47 @@ h2 {
     width: 350px;
   }
 
+  #sunglasses {
+    top: 94px;
+    left: 116px;
+  }
+
+  #crown {
+    left: 138px;
+    top: 22px;
+  }
+
+  #spacehelmet {
+    left: 105px;
+  }
+
+  #tophat {
+    left: 142px;
+  }
+
+  #sunhat {
+    left: 120px;
+  }
+
+  #bowtie {
+    top: 154px;
+    left: 118px;
+  }
+
+  #hairbow {
+    left: 140px;
+  }
+
+  #necklace {
+    left: 100px;
+    top: 162px;
+  }
+
+  #smartwatch {
+    top: 132px;
+    left: 50px;
+  }
+
   .outfit-storage {
     align-items: center;
   }
