@@ -1,6 +1,5 @@
 var currentOutfit;
 var outfits = [];
-var id = 0;
 var hatBox = document.getElementById('hat-box');
 var hatsBtns = document.querySelectorAll('.hats-btn');
 var tophatBtn = document.getElementById('tophat-btn');
@@ -113,7 +112,6 @@ function checkForSavedCards() {
     }
     outfits = parsedOutfits;
     localStorage.setItem('outfits', JSON.stringify(outfits));
-    id = outfits[outfits.length - 1].id;
     createOutfit();
   }
 }
@@ -121,7 +119,7 @@ function checkForSavedCards() {
 
 
 function createOutfit() {
-  id++;
+  var id = new Date().valueOf();
   currentOutfit = new Outfit(id);
 };
 
