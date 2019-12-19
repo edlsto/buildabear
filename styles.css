@@ -292,3 +292,91 @@ h2 {
 .fa:hover {
   color: #ff5964;
 }
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column1,
+  .column2,
+  .column3 {
+    width: 112%;
+  }
+
+  .column1,
+  .column3 {
+    text-align: center;
+  }
+
+  .header__title {
+    font-size: 3em;
+    margin-left: 26px;
+    margin-top: 20px;
+  }
+
+  .category-to-add__title,
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .category-to-add,
+  .column3 h2 {
+    margin-top: 0.5em;
+  }
+
+  .bear {
+    height: 20em;
+  }
+
+  .bear-background {
+    height: 350px;
+    width: 350px;
+  }
+
+  #sunglasses {
+    left: 116px;
+    top: 94px;
+  }
+
+  #crown {
+    left: 138px;
+    top: 22px;
+  }
+
+  #spacehelmet {
+    left: 105px;
+  }
+
+  #tophat {
+    left: 142px;
+  }
+
+  #sunhat {
+    left: 120px;
+  }
+
+  #bowtie {
+    left: 118px;
+    top: 154px;
+  }
+
+  #hairbow {
+    left: 140px;
+  }
+
+  #necklace {
+    left: 100px;
+    top: 162px;
+  }
+
+  #smartwatch {
+    left: 50px;
+    top: 132px;
+  }
+
+  .outfit-storage {
+    align-items: center;
+  }
+}
