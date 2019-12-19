@@ -223,10 +223,6 @@ function checkForGarments(obj) {
   }
 }
 
-function checkForBackgrounds(obj) {
-
-}
-
 function createNewNameCard() {
   var outfitName = outfitInput.value;
   currentOutfit.title = outfitName;
