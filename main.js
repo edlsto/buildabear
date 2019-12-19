@@ -28,6 +28,16 @@ backgroundBtnBox.addEventListener('click', function() {
   toggleBtnClass('background-btn', backgroundBtns);
 });
 
+column1.addEventListener('click', bounceBtn)
+
+function bounceBtn() {
+  if (event.target.tagName === 'BUTTON') {
+    event.target.classList.remove('bounce');
+    event.target.offsetWidth = event.target.offsetWidth;
+    event.target.classList.add('bounce');
+  }
+}
+
 function changeBackground(selector) {
   if (selector === 'beach') {
     bearBackground.style.backgroundImage = 'url("assets/beach.png")';
