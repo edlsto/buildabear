@@ -11,7 +11,6 @@ var currentOutfit;
 var hatBox = document.getElementById('hat-box');
 var hatImgs = document.querySelectorAll('.hat');
 var hatsBtns = document.querySelectorAll('.hats-btn');
-var id = 0;
 var images = document.querySelectorAll('.bear-outfits > *');
 var outfitInput = document.getElementById('outfit-input');
 var outfits = [];
@@ -168,7 +167,7 @@ function createNewNameCard() {
 }
 
 function createOutfit() {
-  id++;
+  var id = new Date().valueOf();
   currentOutfit = new Outfit(id);
 };
 
