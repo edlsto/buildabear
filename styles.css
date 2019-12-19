@@ -167,18 +167,18 @@ h2 {
 .column2 input,
 .column2 button {
   display: block;
-  height: 3em;
-  width: 15em;
   font-family: 'Montserrat', sans-serif;
+  height: 3em;
   text-align: center;
+  width: 15em;
 }
 
 .column2 button {
-  margin: 1em 0;
-  padding: 0;
   background-color: #ff5964;
   color: inherit;
+  margin: 1em 0;
   outline: none;
+  padding: 0;
 }
 
 .column2 button[disabled] {
@@ -250,15 +250,15 @@ h2 {
 
 #smartwatch {
   height: 17%;
-  top: 180px;
   left: 72px;
+  top: 180px;
   transform: rotate(70deg);
 }
 
 #sunglasses {
   height: 12%;
-  top: 125px;
   left: 160px;
+  top: 125px;
   transform: rotate(20deg);
 }
 
@@ -270,18 +270,19 @@ h2 {
 
 .outfit-card {
   background-image: linear-gradient(to right, #ff5964, #ffe74c);
+  box-shadow: 2px 2px 5px #fff;
   display: flex;
+  font-style: Montserrat;
   justify-content: space-between;
-  width: 60%;
   margin: 10px;
   padding: 20px;
-  box-shadow: 2px 2px 5px #fff;
-  font-style: Montserrat;
+  width: 60%;
+
 }
 
 .outfit-card p:hover {
-  text-decoration: underline;
   color: #35a7ff;
+  text-decoration: underline;
 }
 
 .column3 h2 {
