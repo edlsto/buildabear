@@ -133,13 +133,7 @@ function checkForSavedCards() {
   if (localStorage.outfits === "[]" || localStorage.outfits === undefined) {
     createOutfit();
   } else {
-    var retrievedOutfits = localStorage.getItem('outfits');
-    var parsedOutfits = JSON.parse(retrievedOutfits);
-    for (var i = 0; i < parsedOutfits.length; i++) {
-      addSavedOutfitCard(parsedOutfits[i].id, parsedOutfits[i].title);
-    }
-    outfits = parsedOutfits;
-    localStorage.setItem('outfits', JSON.stringify(outfits));
+    getOutfitsFromStorage();
     id = outfits[outfits.length - 1].id;
     createOutfit();
   }
@@ -187,6 +181,16 @@ function findMatchingButton(){
   }
 }
 
+function getOutfitsFromStorage() {
+  var retrievedOutfits = localStorage.getItem('outfits');
+  var parsedOutfits = JSON.parse(retrievedOutfits);
+  for (var i = 0; i < parsedOutfits.length; i++) {
+    addSavedOutfitCard(parsedOutfits[i].id, parsedOutfits[i].title);
+  }
+  outfits = parsedOutfits;
+  localStorage.setItem('outfits', JSON.stringify(outfits));
+}
+
 function pushCurrentOutfitToArray() {
   if (currentOutfit.garments !== [] || currentOutfit.background !== '') {
     outfits.push(currentOutfit);
@@ -214,13 +218,17 @@ function removeOutfitCard(event) {
   if (event.target.classList.contains('fa')) {
     event.target.parentNode.remove();
     var idOfClicked = parseInt(event.target.parentNode.id);
-    for (var i = 0; i < outfits.length; i++) {
-      if (idOfClicked === outfits[i].id) {
-        outfits.splice(i, 1)
-      }
-    }
+    removeOutfitFromArray();
     localStorage.setItem('outfits', JSON.stringify(outfits));
     revertToNaked();
+  }
+}
+
+function removeOutfitFromArray(){
+  for (var i = 0; i < outfits.length; i++) {
+    if (idOfClicked === outfits[i].id) {
+      outfits.splice(i, 1)
+    }
   }
 }
 
