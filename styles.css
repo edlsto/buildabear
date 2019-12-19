@@ -15,21 +15,21 @@ h2 {
 }
 
 .grid-container {
+  background-color: #35a7ff;
   display: grid;
-  grid-template-columns: minmax(15em, 1fr) auto minmax(15em, 1fr);
-  grid-template-rows: 80px auto auto;
   grid-template-areas:
     "header header header"
     "column1 column2 column3"
     "footer footer footer";
-  background-color: #35a7ff;
+  grid-template-columns: minmax(15em, 1fr) auto minmax(15em, 1fr);
+  grid-template-rows: 80px auto auto;
 }
 
 .header {
-  grid-area: header;
   background-color: #35a7ff;
-  text-align: center;
+  grid-area: header;
   padding-top: 0.2em;
+  text-align: center;
 }
 
 .column1,
@@ -40,9 +40,9 @@ h2 {
 }
 
 .column1 {
-  grid-area: column1;
   color: #fff;
   font-family: 'Lakki Reddy', cursive;
+  grid-area: column1;
   padding: 0 1.2em;
 }
 
@@ -55,9 +55,9 @@ h2 {
 }
 
 .footer {
+  background-color: #35a7ff;
   grid-area: footer;
   padding: 0.6em 0;
-  background-color: #35a7ff;
   text-align: center;
 }
 
@@ -70,8 +70,8 @@ button:hover,
 
 .header__title {
   color: #ff5964;
-  text-align: center;
   font-size: 4em;
+  text-align: center;
   text-shadow: .3px .3px 1px #000;
 }
 
@@ -93,22 +93,22 @@ h2 {
 }
 
 .category-to-add__button {
-  height: 2em;
-  margin: 0 .2em .5em 0;
+  background-color: #35a7ff;
   border: none;
   box-shadow:  .3px .3px .3px #000;
-  background-color: #35a7ff;
   color: #fff;
   font-size: 1.1em;
-  text-shadow: .3px .3px .3px #000;
+  height: 2em;
+  margin: 0 .2em .5em 0;
   outline: none;
+  text-shadow: .3px .3px .3px #000;
 }
 
 .category-to-add__button:hover,
 .active {
+  background-color: #ff5964;
   box-shadow: .3px .3px 1px #000;
   cursor: pointer;
-  background-color: #ff5964;
 }
 
 .category-to-add__button:active {
@@ -119,16 +119,16 @@ h2 {
 /* CENTER COLUMN */
 
 .column2 {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .wood-border {
   background-image: url("assets/wood-background.jpg");
   border-radius: 10%;
-  padding: 0.3em;
   margin: 1em;
+  padding: 0.3em;
 }
 
 .wood-border,
