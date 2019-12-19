@@ -291,3 +291,50 @@ h2 {
 .fa:hover {
   color: #ff5964;
 }
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column1,
+  .column2,
+  .column3 {
+    width: 112%;
+  }
+
+  .column1,
+  .column3 {
+    text-align: center;
+  }
+
+  .header__title {
+    margin-top: 20px;
+    margin-left: 26px;
+    font-size: 3em;
+  }
+
+  .category-to-add__title,
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .category-to-add,
+  .column3 h2 {
+    margin-top: 0.5em;
+  }
+
+  .bear {
+    height: 20em;
+  }
+
+  .bear-background {
+    height: 350px;
+    width: 350px;
+  }
+
+  .outfit-storage {
+    align-items: center;
+  }
+}
