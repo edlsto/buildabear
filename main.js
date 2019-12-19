@@ -217,7 +217,6 @@ function removeAssociatedImage() {
 function removeOutfitCard(event) {
   if (event.target.classList.contains('fa')) {
     event.target.parentNode.remove();
-    var idOfClicked = parseInt(event.target.parentNode.id);
     removeOutfitFromArray();
     localStorage.setItem('outfits', JSON.stringify(outfits));
     revertToNaked();
@@ -225,6 +224,7 @@ function removeOutfitCard(event) {
 }
 
 function removeOutfitFromArray(){
+  var idOfClicked = parseInt(event.target.parentNode.id);
   for (var i = 0; i < outfits.length; i++) {
     if (idOfClicked === outfits[i].id) {
       outfits.splice(i, 1)
