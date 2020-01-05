@@ -313,6 +313,106 @@ h2 {
     animation-name: bounce;
 }
 
+@media screen and (max-width: 1000px) {
+  .grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bear-background {
+    margin: 1.5em;
+    background-color: #fff;
+    border-radius: 10%;
+    position: relative;
+    height: 400px;
+    width: 400px;
+  }
+
+  .bear {
+    height: 24em;
+    position: absolute;
+    top: 00px;
+  }
+
+  #save-btn {
+    margin: 0 12px;
+  }
+
+  .column2 {
+    order: 1;
+    width: 70%;
+  }
+
+  .column1 {
+    order: 1;
+    width: 30%;
+  }
+
+  .category-to-add {
+    margin: 10px;
+  }
+
+  .column3 {
+    order: 1;
+    width: 100%;
+  }
+
+  footer {
+    order: 2;
+  }
+
+  header {
+    height: 75px;
+    width: 100%;
+  }
+
+  .outfit-name {
+    display: flex;
+  }
+
+  .outfit-card {
+    max-width: 200px;
+  }
+
+  .outfit-storage {
+  flex-direction: row;
+  flex-wrap: wrap;
+  }
+
+  /* .category-to-add__button {
+    font-size: 0.8em;
+  } */
+
+
+}
+
+@media screen and (max-width: 655px) {
+
+  .column2 {
+    order: 1;
+    width: 100%;
+  }
+
+  .column1 {
+    order: 2;
+    width: 60%;
+  }
+
+  .category-to-add {
+    margin: 10px;
+  }
+
+  .column3 {
+    order: 2;
+    width: 40%;
+  }
+
+
+}
+
+
 @media screen and (max-width: 480px) {
   /* Layout */
   .grid-container {
