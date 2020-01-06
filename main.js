@@ -113,7 +113,7 @@ function changeBackground(selector) {
   } else if (selector === 'outerspace') {
     bearBackground.style.backgroundImage = 'url("assets/outerspace.png")';
     currentOutfit.background = 'outerspace';
-  } else if (selector === "park") {
+  } else if (selector === 'park') {
     bearBackground.style.backgroundImage = 'url("assets/park.png")';
     currentOutfit.background = 'park';
   } else if (selector === '') {
@@ -151,7 +151,7 @@ function checkForGarments(obj) {
 }
 
 function checkForSavedCards() {
-  if (localStorage.outfits === "[]" || localStorage.outfits === undefined) {
+  if (localStorage.outfits === '[]' || localStorage.outfits === undefined) {
     createOutfit();
   } else {
     getOutfitsFromStorage();
@@ -222,12 +222,10 @@ function pushCurrentOutfitToArray() {
       localStorage.setItem('outfits', JSON.stringify(outfits));
     }
   })
-
   if ((currentOutfit.garments !== [] || currentOutfit.background !== '') && matched === false) {
     outfits.push(currentOutfit);
     createNewNameCard();
   }
-
 }
 
 function removeActiveBtnStates(buttonList) {
