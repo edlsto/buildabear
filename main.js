@@ -21,6 +21,7 @@ var sunhatImg = document.getElementById('sunhat-img');
 var tophatBtn = document.getElementById('tophat-btn');
 var tophatBtn = document.getElementById('tophat-btn');
 var tophatImg = document.getElementById('tophat-img');
+var allGarmentButtons = document.querySelectorAll('.hats-btn, .clothes-btn, .accessories-btn');
 
 accessoriesBox.addEventListener('click', function() {
   addRemoveImages('accessory');
@@ -104,28 +105,44 @@ function changeBackground(selector) {
   if (selector === 'beach') {
     bearBackground.style.backgroundImage = 'url("assets/beach.png")';
     currentOutfit.background = 'beach';
+    // document.getElementById('beach').classList.add('active');
   } else if (selector === 'hearts') {
     bearBackground.style.backgroundImage = 'url("assets/hearts.png")';
     currentOutfit.background = 'hearts';
+    // document.getElementById('hearts').classList.add('active');
   } else if (selector === 'outerspace') {
     bearBackground.style.backgroundImage = 'url("assets/outerspace.png")';
     currentOutfit.background = 'outerspace';
+    // document.getElementById('outerspace').classList.add('active');
   } else if (selector === "park") {
     bearBackground.style.backgroundImage = 'url("assets/park.png")';
     currentOutfit.background = 'park';
+    // document.getElementById('park').classList.add('active');
   } else if (selector === '') {
     bearBackground.style.backgroundImage = '';
   }
 }
 
 function checkForGarments(obj) {
+  allGarmentButtons.forEach(function(button) {
+    button.classList.remove('active');
+  });
+  backgroundBtns.forEach(function(button) {
+    button.classList.remove('active');
+  });
   for (var i = 0; i < images.length; i++) {
     if (obj.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
+      allGarmentButtons.forEach(function(button) {
+        if (button.classList.contains(images[i].id)) {
+          button.classList.add('active');
+        }
+      });
     } else {
       images[i].classList.remove('visible');
     }
   }
+  document.getElementById(obj.background).classList.add('active');
 }
 
 function checkForSavedCards() {
