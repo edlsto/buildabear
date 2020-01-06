@@ -346,22 +346,22 @@ h2 {
 
 
 
-  /* Middle section */
+  /* Bear section */
 
-    .bear {
-      height: 20em;
-    }
+  .bear {
+    height: 20em;
+  }
 
-    .bear-background {
-      height: 350px;
-      width: 350px;
-    }
+  .bear-background {
+    height: 350px;
+    width: 350px;
+  }
 
   #save-btn {
     margin: 0 12px;
   }
 
-
+  /* Saved outfit section */
 
   .category-to-add {
     margin: 10px;
@@ -381,7 +381,7 @@ h2 {
   flex-wrap: wrap;
   }
 
-  /* first section */
+  /* Add outfit section */
 
     .header__title {
       font-size: 3em;
@@ -485,6 +485,7 @@ h2 {
   .column2,
   .column3 {
     width: 112%;
+    order: 1;
   }
 
   .column1,
