@@ -53,10 +53,12 @@ h2 {
   font-family: 'Lakki Reddy', cursive;
   grid-area: column1;
   padding: 0 1.2em;
+  margin-bottom: 30px;
 }
 
 .column2 {
   grid-area: column2;
+  margin-bottom: 30px;
 }
 
 .column3 {
@@ -337,6 +339,11 @@ h2 {
     min-height: 100%;
   }
 
+  .column1,
+  .column2 {
+    margin-bottom: 0;
+  }
+
   .column3 {
     padding: 1.2em;
   }
@@ -453,7 +460,7 @@ h2 {
 }
 
 @media screen and (max-width: 480px) {
-  
+
   /* Layout */
   .grid-container {
     display: flex;
@@ -465,7 +472,7 @@ h2 {
     text-align: center;
   }
 
-/* first section */
+  /* first section */
 
   .header__title {
     font-size: 3em;
