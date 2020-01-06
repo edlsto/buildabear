@@ -314,10 +314,37 @@ h2 {
 }
 
 @media screen and (max-width: 1000px) {
+
+
+  /* Layout */
+
   .grid-container {
     display: flex;
     flex-wrap: wrap;
   }
+
+  .column1 {
+    width: 40%;
+  }
+
+  .column2 {
+    width: 60%;
+  }
+
+  .column3 {
+    width: 100%;
+    padding: 1.2em;
+  }
+
+  .column3 h2 {
+    margin-top: 0;
+  }
+
+  header {
+    width: 100%;
+  }
+
+
 
   /* Middle section */
 
@@ -334,46 +361,18 @@ h2 {
     margin: 0 12px;
   }
 
-  .column2 {
-    order: 1;
-    width: 60%;
-  }
 
-  .column1 {
-    order: 1;
-    width: 40%;
-  }
-
-  .column3 h2 {
-    margin-top: 0;
-
-  }
 
   .category-to-add {
     margin: 10px;
   }
 
-  .column3 {
-    order: 1;
-    width: 100%;
-    padding: 1.2em;
-  }
-
-  footer {
-    order: 2;
-  }
-
-  header {
-    height: 75px;
-    width: 100%;
-  }
 
   .outfit-name {
     display: flex;
   }
 
   .outfit-card {
-
     flex: 0 1 200px;
   }
 
@@ -382,9 +381,25 @@ h2 {
   flex-wrap: wrap;
   }
 
-  /* .category-to-add__button {
-    font-size: 0.8em;
-  } */
+  /* first section */
+
+    .header__title {
+      font-size: 3em;
+      margin-left: 26px;
+      margin-top: 20px;
+    }
+
+    .category-to-add__title,
+    h2 {
+      font-size: 1.4em;
+    }
+
+    .category-to-add,
+    .column3 h2 {
+      margin-top: 0.5em;
+    }
+
+
 
   /* Outfit positioning  */
 
@@ -429,23 +444,18 @@ h2 {
       top: 132px;
     }
 
-
 }
 
 @media screen and (max-width: 655px) {
-
-  .column2 {
-    order: 1;
-    width: 100%;
-  }
 
   .column1 {
     order: 2;
     width: 60%;
   }
 
-  .category-to-add {
-    margin: 10px;
+  .column2 {
+    order: 1;
+    width: 100%;
   }
 
   .column3 {
@@ -453,6 +463,13 @@ h2 {
     width: 40%;
   }
 
+  footer {
+    order: 2;
+  }
+
+  .category-to-add {
+    margin: 10px;
+  }
 
 }
 
@@ -493,59 +510,7 @@ h2 {
     margin-top: 0.5em;
   }
 
-/* Middle section */
 
-  .bear {
-    height: 20em;
-  }
-
-  .bear-background {
-    height: 350px;
-    width: 350px;
-  }
-
-/* Outfit positioning  */
-
-  #sunglasses {
-    left: 116px;
-    top: 94px;
-  }
-
-  #crown {
-    left: 138px;
-    top: 22px;
-  }
-
-  #spacehelmet {
-    left: 105px;
-  }
-
-  #tophat {
-    left: 142px;
-  }
-
-  #sunhat {
-    left: 120px;
-  }
-
-  #bowtie {
-    left: 118px;
-    top: 154px;
-  }
-
-  #hairbow {
-    left: 140px;
-  }
-
-  #necklace {
-    left: 100px;
-    top: 162px;
-  }
-
-  #smartwatch {
-    left: 50px;
-    top: 132px;
-  }
 
 /* Bottom section */
 
