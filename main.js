@@ -71,7 +71,6 @@ function accessOutfits(event){
       currentOutfit.garments = outfitsArr[i].garments;
       currentOutfit.background = outfitsArr[i].background;
       saveBtn.removeAttribute('disabled');
-
     }
   }
 }
@@ -108,19 +107,15 @@ function changeBackground(selector) {
   if (selector === 'beach') {
     bearBackground.style.backgroundImage = 'url("assets/beach.png")';
     currentOutfit.background = 'beach';
-    // document.getElementById('beach').classList.add('active');
   } else if (selector === 'hearts') {
     bearBackground.style.backgroundImage = 'url("assets/hearts.png")';
     currentOutfit.background = 'hearts';
-    // document.getElementById('hearts').classList.add('active');
   } else if (selector === 'outerspace') {
     bearBackground.style.backgroundImage = 'url("assets/outerspace.png")';
     currentOutfit.background = 'outerspace';
-    // document.getElementById('outerspace').classList.add('active');
   } else if (selector === "park") {
     bearBackground.style.backgroundImage = 'url("assets/park.png")';
     currentOutfit.background = 'park';
-    // document.getElementById('park').classList.add('active');
   } else if (selector === '') {
     bearBackground.style.backgroundImage = '';
   }
