@@ -120,12 +120,15 @@ function changeBackground(selector) {
 }
 
 function checkForGarments(obj) {
+  allButtons.forEach(function(button) {
+    button.classList.remove('active');
+  });
   for (var i = 0; i < images.length; i++) {
     if (obj.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
       allButtons.forEach(function(button) {
         if (button.classList.contains(images[i].id)) {
-          button.classList.add('active')
+          button.classList.add('active');
         }
       });
     } else {
