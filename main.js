@@ -21,6 +21,7 @@ var sunhatImg = document.getElementById('sunhat-img');
 var tophatBtn = document.getElementById('tophat-btn');
 var tophatBtn = document.getElementById('tophat-btn');
 var tophatImg = document.getElementById('tophat-img');
+var allButtons = document.querySelectorAll('.category-to-add__button');
 
 accessoriesBox.addEventListener('click', function() {
   addRemoveImages('accessory');
@@ -122,13 +123,11 @@ function checkForGarments(obj) {
   for (var i = 0; i < images.length; i++) {
     if (obj.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
-      // buttons.forEach(button => function() {
-      //   if (button.classList.contains(images[i])) {
-      //     button.classList.add('active')
-      //   }
-      // })
-      //for each button, check to see if classList.contains(images[i])
-      //if yes, add active class
+      allButtons.forEach(function(button) {
+        if (button.classList.contains(images[i].id)) {
+          button.classList.add('active')
+        }
+      });
     } else {
       images[i].classList.remove('visible');
     }
