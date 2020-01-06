@@ -51,7 +51,7 @@ saveBtn.addEventListener('click', function() {
   revertToNaked();
 });
 
-outfitInput.addEventListener('keyup', checkInput);
+outfitInput.addEventListener('input', checkInput);
 
 outfitStorage.addEventListener('click', function() {
   removeOutfitCard(event);
@@ -70,6 +70,8 @@ function accessOutfits(event){
       changeBackground(outfitsArr[i].background);
       currentOutfit.garments = outfitsArr[i].garments;
       currentOutfit.background = outfitsArr[i].background;
+      saveBtn.removeAttribute('disabled');
+
     }
   }
 }
