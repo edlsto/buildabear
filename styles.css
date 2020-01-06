@@ -315,7 +315,6 @@ h2 {
 
 @media screen and (max-width: 1000px) {
 
-
   /* Layout */
 
   .grid-container {
@@ -343,8 +342,6 @@ h2 {
   header {
     width: 100%;
   }
-
-
 
   /* Bear section */
 
@@ -383,66 +380,64 @@ h2 {
 
   /* Add outfit section */
 
-    .header__title {
-      font-size: 3em;
-      margin-left: 26px;
-      margin-top: 20px;
-    }
+  .header__title {
+    font-size: 3em;
+    margin-left: 26px;
+    margin-top: 20px;
+  }
 
-    .category-to-add__title,
-    h2 {
-      font-size: 1.4em;
-    }
+  .category-to-add__title,
+  h2 {
+    font-size: 1.4em;
+  }
 
-    .category-to-add,
-    .column3 h2 {
-      margin-top: 0.5em;
-    }
-
-
+  .category-to-add,
+  .column3 h2 {
+    margin-top: 0.5em;
+  }
 
   /* Outfit positioning  */
 
-    #sunglasses {
-      left: 116px;
-      top: 94px;
-    }
+  #sunglasses {
+    left: 116px;
+    top: 94px;
+  }
 
-    #crown {
-      left: 138px;
-      top: 22px;
-    }
+  #crown {
+    left: 138px;
+    top: 22px;
+  }
 
-    #spacehelmet {
-      left: 105px;
-    }
+  #spacehelmet {
+    left: 105px;
+  }
 
-    #tophat {
-      left: 142px;
-    }
+  #tophat {
+    left: 142px;
+  }
 
-    #sunhat {
-      left: 120px;
-    }
+  #sunhat {
+    left: 120px;
+  }
 
-    #bowtie {
-      left: 118px;
-      top: 154px;
-    }
+  #bowtie {
+    left: 118px;
+    top: 154px;
+  }
 
-    #hairbow {
-      left: 140px;
-    }
+  #hairbow {
+    left: 140px;
+  }
 
-    #necklace {
-      left: 100px;
-      top: 162px;
-    }
+  #necklace {
+    left: 100px;
+    top: 162px;
+  }
 
-    #smartwatch {
-      left: 50px;
-      top: 132px;
-    }
+  #smartwatch {
+    left: 50px;
+    top: 132px;
+  }
 
 }
 
@@ -472,7 +467,6 @@ h2 {
   }
 
 }
-
 
 @media screen and (max-width: 480px) {
   /* Layout */
@@ -511,11 +505,14 @@ h2 {
     margin-top: 0.5em;
   }
 
-
-
 /* Bottom section */
 
   .outfit-storage {
     align-items: center;
+    flex-direction: column;
+  }
+
+  .outfit-card {
+    flex: 0 1 auto;
   }
 }
