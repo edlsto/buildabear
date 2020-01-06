@@ -122,6 +122,13 @@ function checkForGarments(obj) {
   for (var i = 0; i < images.length; i++) {
     if (obj.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
+      // buttons.forEach(button => function() {
+      //   if (button.classList.contains(images[i])) {
+      //     button.classList.add('active')
+      //   }
+      // })
+      //for each button, check to see if classList.contains(images[i])
+      //if yes, add active class
     } else {
       images[i].classList.remove('visible');
     }
