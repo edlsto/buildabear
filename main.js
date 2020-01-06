@@ -121,13 +121,7 @@ function changeBackground(selector) {
   }
 }
 
-function checkForGarments(obj) {
-  allGarmentButtons.forEach(function(button) {
-    button.classList.remove('active');
-  });
-  backgroundBtns.forEach(function(button) {
-    button.classList.remove('active');
-  });
+function checkImages(obj) {
   for (var i = 0; i < images.length; i++) {
     if (obj.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
@@ -140,6 +134,16 @@ function checkForGarments(obj) {
       images[i].classList.remove('visible');
     }
   }
+}
+
+function checkForGarments(obj) {
+  allGarmentButtons.forEach(function(button) {
+    button.classList.remove('active');
+  });
+  backgroundBtns.forEach(function(button) {
+    button.classList.remove('active');
+  });
+  checkImages(obj);
   if (obj.background) {
     document.getElementById(obj.background).classList.add('active');
   }
