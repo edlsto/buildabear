@@ -142,7 +142,10 @@ function checkForGarments(obj) {
       images[i].classList.remove('visible');
     }
   }
-  document.getElementById(obj.background).classList.add('active');
+  if (obj.background) {
+    document.getElementById(obj.background).classList.add('active');
+  }
+  outfitInput.value = obj.title;
 }
 
 function checkForSavedCards() {
