@@ -121,15 +121,19 @@ function changeBackground(selector) {
   }
 }
 
+function checkButtons(i) {
+  allGarmentButtons.forEach(function(button) {
+    if (button.classList.contains(images[i].id)) {
+      button.classList.add('active');
+    }
+  });
+}
+
 function checkImages(obj) {
   for (var i = 0; i < images.length; i++) {
     if (obj.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
-      allGarmentButtons.forEach(function(button) {
-        if (button.classList.contains(images[i].id)) {
-          button.classList.add('active');
-        }
-      });
+      checkButtons(i);
     } else {
       images[i].classList.remove('visible');
     }
