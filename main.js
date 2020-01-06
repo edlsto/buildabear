@@ -47,7 +47,6 @@ hatBox.addEventListener('click', function() {
 
 saveBtn.addEventListener('click', function() {
   pushCurrentOutfitToArray();
-  createNewNameCard();
   clearForm();
   revertToNaked();
 });
@@ -69,6 +68,8 @@ function accessOutfits(event){
     if (outfitsArr[i].title === outfitToGrab) {
       checkForGarments(outfitsArr[i]);
       changeBackground(outfitsArr[i].background);
+      currentOutfit.garments = outfitsArr[i].garments;
+      currentOutfit.background = outfitsArr[i].background;
     }
   }
 }
@@ -211,9 +212,21 @@ function getOutfitsFromStorage() {
 }
 
 function pushCurrentOutfitToArray() {
-  if (currentOutfit.garments !== [] || currentOutfit.background !== '') {
+  var matched = false;
+  outfits.forEach(function(outfit){
+    if (outfitInput.value === outfit.title) {
+      outfit.garments = currentOutfit.garments;
+      outfit.background = currentOutfit.background;
+      matched = true;
+      localStorage.setItem('outfits', JSON.stringify(outfits));
+    }
+  })
+
+  if ((currentOutfit.garments !== [] || currentOutfit.background !== '') && matched === false) {
     outfits.push(currentOutfit);
+    createNewNameCard();
   }
+
 }
 
 function removeActiveBtnStates(buttonList) {
