@@ -18,7 +18,8 @@ html {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: 'Lakki Reddy', cursive;
 }
 
@@ -95,8 +96,12 @@ button:hover,
 /* LEFT COLUMN */
 
 .category-to-add,
-.column3 h2 {
+.column3 h3 {
   margin-top: 1.8em;
+}
+
+.column3 h2 {
+  margin-top: 0.5em;
 }
 
 .category-to-add__title,
@@ -296,16 +301,24 @@ label h2 {
   flex-direction: column;
 }
 
+.outfit-card,
+.column3 input {
+  font-style: Montserrat;
+  padding: 20px;
+  width: 60%;
+}
+
+.column3 input {
+  margin: 0 10px 10px 10px;
+  font-size: 16px;
+}
+
 .outfit-card {
   background-image: linear-gradient(to right, #ff5964, #ffe74c);
   box-shadow: 2px 2px 5px #fff;
   display: flex;
-  font-style: Montserrat;
   justify-content: space-between;
   margin: 10px;
-  padding: 20px;
-  width: 60%;
-
 }
 
 .outfit-card p:hover {
@@ -313,7 +326,8 @@ label h2 {
   text-decoration: underline;
 }
 
-.column3 h2 {
+.column3 h2,
+h3 {
   margin-left: 10px;
 }
 
