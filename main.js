@@ -304,6 +304,9 @@ function searchOutfits() {
     if (searchTerm === outfit.title.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
       filteredOutfits.push(outfit);
     }
+    if (searchTerm === outfit.background.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
+      filteredOutfits.push(outfit);
+    }
   });
   showSearchedCards(filteredOutfits);
 }
