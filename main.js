@@ -2,7 +2,6 @@ var accessoriesBox = document.getElementById('accessories-box');
 var accessoriesBtns = document.querySelectorAll('.accessories-btn');
 var backgroundBtnBox = document.querySelector('.background-btns');
 var backgroundBtns = document.querySelectorAll('.background-btn');
-var backgroundImgs = document.querySelectorAll('.background-btn');
 var bearBackground = document.querySelector('.bear-background');
 var clothesBox = document.getElementById('clothes-box');
 var clothesBtns = document.querySelectorAll('.clothes-btn');
