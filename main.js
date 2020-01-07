@@ -8,18 +8,12 @@ var clothesBtns = document.querySelectorAll('.clothes-btn');
 var column1 = document.querySelector('.column1');
 var currentOutfit;
 var hatBox = document.getElementById('hat-box');
-var hatImgs = document.querySelectorAll('.hat');
 var hatsBtns = document.querySelectorAll('.hats-btn');
 var images = document.querySelectorAll('.bear-outfits > *');
 var outfitInput = document.getElementById('outfit-input');
 var outfits = [];
 var outfitStorage = document.querySelector('.outfit-storage');
 var saveBtn = document.getElementById('save-btn');
-var sunhatBtn = document.getElementById('sunhat-btn');
-var sunhatImg = document.getElementById('sunhat-img');
-var tophatBtn = document.getElementById('tophat-btn');
-var tophatBtn = document.getElementById('tophat-btn');
-var tophatImg = document.getElementById('tophat-img');
 var allGarmentButtons = document.querySelectorAll('.hats-btn, .clothes-btn, .accessories-btn');
 
 accessoriesBox.addEventListener('click', function() {
