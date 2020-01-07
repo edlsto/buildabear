@@ -23,7 +23,7 @@ h2 {
 }
 
 .grid-container {
-  background-color: #a6f6ae;
+  background-color: #389B43;
   display: grid;
   grid-template-areas:
     "header header header"
@@ -45,7 +45,7 @@ h2 {
 .column1,
 .column2,
 .column3 {
-  background-color: #a6f6ae;
+  background-color: #389B43;
   color: #fff;
 }
 
