@@ -177,6 +177,10 @@ h2 {
   top: 30px;
 }
 
+label h2 {
+  font-size: 22px;
+}
+
 .column2 input,
 .column2 button {
   display: block;
