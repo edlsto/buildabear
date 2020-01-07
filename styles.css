@@ -23,7 +23,7 @@ h2 {
 }
 
 .grid-container {
-  background-color: #a6f6ae;
+  background-color: #389B43;
   display: grid;
   grid-template-areas:
     "header header header"
@@ -45,7 +45,7 @@ h2 {
 .column1,
 .column2,
 .column3 {
-  background-color: #a6f6ae;
+  background-color: #389B43;
   color: #fff;
 }
 
@@ -82,7 +82,7 @@ button:hover,
 /* HEADER */
 
 .header__title {
-  color: #ff5964;
+  color: #ffe74c;
   font-size: 4em;
   text-align: center;
   text-shadow: .3px .3px 1px #000;
