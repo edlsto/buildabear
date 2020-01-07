@@ -87,7 +87,7 @@ button:hover,
   color: #ffe74c;
   font-size: 4em;
   text-align: center;
-  text-shadow: .3px .3px 1px #000;
+  text-shadow: 3px 3px 1px #ff5964;
 }
 
 .header--secondary-font-color {
@@ -211,6 +211,7 @@ label h2 {
   font-size: 12px;
   color: #ff0000;
   text-align: center;
+  
 }
 
 .column2 button {
