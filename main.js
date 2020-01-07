@@ -15,6 +15,7 @@ var outfits = [];
 var outfitStorage = document.querySelector('.outfit-storage');
 var saveBtn = document.getElementById('save-btn');
 var allGarmentButtons = document.querySelectorAll('.hats-btn, .clothes-btn, .accessories-btn');
+var warningDiv = document.querySelector('.warning-div');
 
 accessoriesBox.addEventListener('click', function() {
   addRemoveImages('accessory');
@@ -44,7 +45,10 @@ saveBtn.addEventListener('click', function() {
   revertToNaked();
 });
 
-outfitInput.addEventListener('input', checkInput);
+outfitInput.addEventListener('input', function() {
+  checkInput();
+  validateDuplicateName();
+});
 
 outfitStorage.addEventListener('click', function() {
   removeOutfitCard(event);
@@ -52,6 +56,17 @@ outfitStorage.addEventListener('click', function() {
 });
 
 checkForSavedCards();
+
+function validateDuplicateName() {
+  outfits.forEach(function(outfit) {
+    if (outfitInput.value === outfit.title) {
+      warningDiv.innerHTML = `<p class="warning-msg"><i class="fa fa-exclamation-triangle"></i> Outfit name
+        exists. On save, existing outfit will be replaced.</p>`
+    } else {
+      warningDiv.innerHTML = '';
+    }
+  })
+}
 
 function accessOutfits(event){
   var outfitToGrab = event.target.innerText;

@@ -186,6 +186,17 @@ h2 {
   width: 15em;
 }
 
+.warning {
+  height: 15px;
+}
+
+.warning-msg {
+  width: 175px;
+  font-size: 12px;
+  color: #ff0000;
+  text-align: center;
+}
+
 .column2 button {
   background-color: #ff5964;
   color: inherit;
@@ -368,6 +379,7 @@ h2 {
   #save-btn {
     margin: 0 12px;
   }
+
 
   /* Saved outfit section */
 
