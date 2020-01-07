@@ -2,25 +2,18 @@ var accessoriesBox = document.getElementById('accessories-box');
 var accessoriesBtns = document.querySelectorAll('.accessories-btn');
 var backgroundBtnBox = document.querySelector('.background-btns');
 var backgroundBtns = document.querySelectorAll('.background-btn');
-var backgroundImgs = document.querySelectorAll('.background-btn');
 var bearBackground = document.querySelector('.bear-background');
 var clothesBox = document.getElementById('clothes-box');
 var clothesBtns = document.querySelectorAll('.clothes-btn');
 var column1 = document.querySelector('.column1');
 var currentOutfit;
 var hatBox = document.getElementById('hat-box');
-var hatImgs = document.querySelectorAll('.hat');
 var hatsBtns = document.querySelectorAll('.hats-btn');
 var images = document.querySelectorAll('.bear-outfits > *');
 var outfitInput = document.getElementById('outfit-input');
 var outfits = [];
 var outfitStorage = document.querySelector('.outfit-storage');
 var saveBtn = document.getElementById('save-btn');
-var sunhatBtn = document.getElementById('sunhat-btn');
-var sunhatImg = document.getElementById('sunhat-img');
-var tophatBtn = document.getElementById('tophat-btn');
-var tophatBtn = document.getElementById('tophat-btn');
-var tophatImg = document.getElementById('tophat-img');
 var allGarmentButtons = document.querySelectorAll('.hats-btn, .clothes-btn, .accessories-btn');
 
 accessoriesBox.addEventListener('click', function() {
@@ -63,13 +56,13 @@ checkForSavedCards();
 function accessOutfits(event){
   var outfitToGrab = event.target.innerText;
   var stringOfOutfits = localStorage.getItem('outfits');
-  var outfitsArr = JSON.parse(stringOfOutfits);
-  for (var i = 0; i < outfitsArr.length; i++) {
-    if (outfitsArr[i].title === outfitToGrab) {
-      checkForGarments(outfitsArr[i]);
-      changeBackground(outfitsArr[i].background);
-      currentOutfit.garments = outfitsArr[i].garments;
-      currentOutfit.background = outfitsArr[i].background;
+  var outfitsList = JSON.parse(stringOfOutfits);
+  for (var i = 0; i < outfitsList.length; i++) {
+    if (outfitsList[i].title === outfitToGrab) {
+      checkForGarments(outfitsList[i]);
+      changeBackground(outfitsList[i].background);
+      currentOutfit.garments = outfitsList[i].garments;
+      currentOutfit.background = outfitsList[i].background;
       saveBtn.removeAttribute('disabled');
     }
   }
@@ -104,21 +97,8 @@ function bounceBtn() {
 }
 
 function changeBackground(selector) {
-  if (selector === 'beach') {
-    bearBackground.style.backgroundImage = 'url("assets/beach.png")';
-    currentOutfit.background = 'beach';
-  } else if (selector === 'hearts') {
-    bearBackground.style.backgroundImage = 'url("assets/hearts.png")';
-    currentOutfit.background = 'hearts';
-  } else if (selector === 'outerspace') {
-    bearBackground.style.backgroundImage = 'url("assets/outerspace.png")';
-    currentOutfit.background = 'outerspace';
-  } else if (selector === 'park') {
-    bearBackground.style.backgroundImage = 'url("assets/park.png")';
-    currentOutfit.background = 'park';
-  } else if (selector === '') {
-    bearBackground.style.backgroundImage = '';
-  }
+    bearBackground.style.backgroundImage = `url("assets/${selector}.png")`;
+    currentOutfit.background = selector;
 }
 
 function checkButtons(i) {
@@ -129,9 +109,9 @@ function checkButtons(i) {
   });
 }
 
-function checkImages(obj) {
+function checkImages(outfit) {
   for (var i = 0; i < images.length; i++) {
-    if (obj.garments.indexOf(images[i].id) > -1) {
+    if (outfit.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
       checkButtons(i);
     } else {
@@ -140,18 +120,19 @@ function checkImages(obj) {
   }
 }
 
-function checkForGarments(obj) {
+function checkForGarments(outfit) {
   allGarmentButtons.forEach(function(button) {
     button.classList.remove('active');
   });
   backgroundBtns.forEach(function(button) {
     button.classList.remove('active');
   });
-  checkImages(obj);
-  if (obj.background) {
-    document.getElementById(obj.background).classList.add('active');
+
+  checkImages(outfit);
+  if (outfit.background) {
+    document.getElementById(outfit.background).classList.add('active');
   }
-  outfitInput.value = obj.title;
+  outfitInput.value = outfit.title;
 }
 
 function checkForSavedCards() {
@@ -174,7 +155,7 @@ function checkInactiveTarget(category) {
 }
 
 function checkInput() {
-  if (outfitInput.value !== '') {
+  if (outfitInput.value) {
     saveBtn.removeAttribute('disabled')
   } else {
     saveBtn.setAttribute('disabled', 'disabled')
@@ -226,7 +207,7 @@ function pushCurrentOutfitToArray() {
       localStorage.setItem('outfits', JSON.stringify(outfits));
     }
   })
-  if ((currentOutfit.garments !== [] || currentOutfit.background !== '') && matched === false) {
+  if ((currentOutfit.garments !== [] || !currentOutfit.background) && !matched) {
     outfits.push(currentOutfit);
     createNewNameCard();
   }
