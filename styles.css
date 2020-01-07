@@ -40,6 +40,8 @@ h2 {
   padding-top: 0.2em;
   text-align: center;
   overflow: visible;
+  display: flex;
+  justify-content: center;
 }
 
 .column1,
@@ -90,6 +92,16 @@ button:hover,
 
 .header--secondary-font-color {
   color: #ffe74c;
+}
+
+.gear {
+  height: 60px;
+  margin: 10px;
+}
+
+.gear1 {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 /* LEFT COLUMN */
