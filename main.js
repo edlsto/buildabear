@@ -25,6 +25,7 @@ accessoriesBox.addEventListener('click', function() {
 backgroundBtnBox.addEventListener('click', function() {
   changeBackground(event.target.id);
   toggleBtnClass('background-btn', backgroundBtns);
+  removeActiveBtnStates(backgroundBtns);
 });
 
 clothesBox.addEventListener('click', function() {
@@ -85,9 +86,9 @@ function accessOutfits(event){
 
 function addRemoveImages(category){
   if (event.target.classList.contains('active')) {
-    removeAssociatedImage();
+   removeAssociatedImage();
   } else {
-    checkInactiveTarget(category);
+    // checkInactiveTarget(category);
     findMatchingButton();
   }
 }
@@ -279,6 +280,5 @@ function revertToNaked() {
 function toggleBtnClass(buttonClass, buttonList) {
   if (event.target.classList.contains(buttonClass)) {
     event.target.classList.toggle('active');
-    removeActiveBtnStates(buttonList);
   }
 }
