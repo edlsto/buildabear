@@ -155,7 +155,7 @@ function checkInactiveTarget(category) {
 }
 
 function checkInput() {
-  if (outfitInput.value !== '') {
+  if (outfitInput.value) {
     saveBtn.removeAttribute('disabled')
   } else {
     saveBtn.setAttribute('disabled', 'disabled')
@@ -207,7 +207,7 @@ function pushCurrentOutfitToArray() {
       localStorage.setItem('outfits', JSON.stringify(outfits));
     }
   })
-  if ((currentOutfit.garments !== [] || currentOutfit.background !== '') && matched === false) {
+  if ((currentOutfit.garments !== [] || !currentOutfit.background) && !matched) {
     outfits.push(currentOutfit);
     createNewNameCard();
   }
