@@ -97,21 +97,8 @@ function bounceBtn() {
 }
 
 function changeBackground(selector) {
-  if (selector === 'beach') {
-    bearBackground.style.backgroundImage = 'url("assets/beach.png")';
-    currentOutfit.background = 'beach';
-  } else if (selector === 'hearts') {
-    bearBackground.style.backgroundImage = 'url("assets/hearts.png")';
-    currentOutfit.background = 'hearts';
-  } else if (selector === 'outerspace') {
-    bearBackground.style.backgroundImage = 'url("assets/outerspace.png")';
-    currentOutfit.background = 'outerspace';
-  } else if (selector === 'park') {
-    bearBackground.style.backgroundImage = 'url("assets/park.png")';
-    currentOutfit.background = 'park';
-  } else if (selector === '') {
-    bearBackground.style.backgroundImage = '';
-  }
+    bearBackground.style.backgroundImage = `url("assets/${selector}.png")`;
+    currentOutfit.background = selector;
 }
 
 function checkButtons(i) {
