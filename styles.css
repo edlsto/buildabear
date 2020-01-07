@@ -35,7 +35,7 @@ h2 {
 }
 
 .header {
-  background-color: #35a7ff;
+  background-color: #0076d1;
   grid-area: header;
   padding-top: 0.2em;
   text-align: center;
@@ -67,7 +67,7 @@ h2 {
 }
 
 .footer {
-  background-color: #35a7ff;
+  background-color: #0076d1;
   grid-area: footer;
   padding: 0.6em 0;
   text-align: center;
@@ -106,7 +106,7 @@ h2 {
 }
 
 .category-to-add__button {
-  background-color: #35a7ff;
+  background-color: #0076d1;
   border: none;
   box-shadow:  .3px .3px .3px #000;
   color: #fff;
