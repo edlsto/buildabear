@@ -36,3 +36,12 @@ when and how we would use these datatypes.
 - We both now feel more comfortable pairing and talking through our problem-solving processes.
 It was difficult at first, but we spent time getting to know each other's learning styles and
 have enhanced our professional collaboration skills because of it.
+
+#Screenshots of comp and our app
+
+![Comp Screenshot](assets/bab-comp.png)
+
+#Contributors
+
+- Ed Stoner: https://github.com/edlsto
+- Lili Manrique: https://github.com/lmanriq
