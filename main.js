@@ -30,18 +30,29 @@ function searchOutfits() {
   var searchTerm = outfitSearchInput.value;
   var filteredOutfits = [];
   var hasGarment = false;
+  var nameMatch = false;
   outfits.forEach(function(outfit) {
     outfit.garments.forEach(function(garment) {
-      if (searchTerm === garment) {
+      if (searchTerm === garment.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
         hasGarment = true;
+        filteredOutfits.push(outfit);
       }
     })
-    if (searchTerm === outfit.title || hasGarment) {
+
+    if (searchTerm === outfit.title.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
       filteredOutfits.push(outfit);
     }
   });
-  console.log(filteredOutfits);
   showSearchedCards(filteredOutfits);
+}
+
+function showSearchedCards(found) {
+  // if (!outfitSearchInput.value) {
+  //   // checkForSavedCards();
+  // }
+  found.forEach(function(outfit){
+    addSavedOutfitCard(outfit.id, outfit.title);
+  })
 }
 
 
@@ -180,6 +191,10 @@ function checkForGarments(outfit) {
 }
 
 function checkForSavedCards() {
+  var allCards = document.querySelectorAll('.outfit-card');
+  allCards.forEach(function(card) {
+    card.remove();
+  });
   if (localStorage.outfits === '[]' || localStorage.outfits === undefined) {
     createOutfit();
   } else {
@@ -229,16 +244,6 @@ function findMatchingButton(){
       currentOutfit.addGarment(images[i].id);
     }
   }
-}
-
-function showSearchedCards(found) {
-  if (!outfitSearchInput.value) {
-    checkForSavedCards();
-  }
-  // var foundOutfits = searchOutfits();
-  found.forEach(function(outfit){
-    addSavedOutfitCard(outfit.id, outfit.title);
-  })
 }
 
 function getOutfitsFromStorage() {
