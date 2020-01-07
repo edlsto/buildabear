@@ -109,9 +109,9 @@ function checkButtons(i) {
   });
 }
 
-function checkImages(obj) {
+function checkImages(outfit) {
   for (var i = 0; i < images.length; i++) {
-    if (obj.garments.indexOf(images[i].id) > -1) {
+    if (outfit.garments.indexOf(images[i].id) > -1) {
       images[i].classList.add('visible');
       checkButtons(i);
     } else {
@@ -120,18 +120,19 @@ function checkImages(obj) {
   }
 }
 
-function checkForGarments(obj) {
+function checkForGarments(outfit) {
   allGarmentButtons.forEach(function(button) {
     button.classList.remove('active');
   });
   backgroundBtns.forEach(function(button) {
     button.classList.remove('active');
   });
-  checkImages(obj);
-  if (obj.background) {
-    document.getElementById(obj.background).classList.add('active');
+
+  checkImages(outfit);
+  if (outfit.background) {
+    document.getElementById(outfit.background).classList.add('active');
   }
-  outfitInput.value = obj.title;
+  outfitInput.value = outfit.title;
 }
 
 function checkForSavedCards() {
