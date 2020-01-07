@@ -6,7 +6,8 @@
 
 /* LAYOUT */
 .body,
-p {
+p,
+footer {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -70,6 +71,7 @@ h2 {
   grid-area: footer;
   padding: 0.6em 0;
   text-align: center;
+  color: #fff;
 }
 
 button:hover,
