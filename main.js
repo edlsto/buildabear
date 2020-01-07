@@ -56,13 +56,13 @@ checkForSavedCards();
 function accessOutfits(event){
   var outfitToGrab = event.target.innerText;
   var stringOfOutfits = localStorage.getItem('outfits');
-  var outfitsArr = JSON.parse(stringOfOutfits);
-  for (var i = 0; i < outfitsArr.length; i++) {
-    if (outfitsArr[i].title === outfitToGrab) {
-      checkForGarments(outfitsArr[i]);
-      changeBackground(outfitsArr[i].background);
-      currentOutfit.garments = outfitsArr[i].garments;
-      currentOutfit.background = outfitsArr[i].background;
+  var outfitsList = JSON.parse(stringOfOutfits);
+  for (var i = 0; i < outfitsList.length; i++) {
+    if (outfitsList[i].title === outfitToGrab) {
+      checkForGarments(outfitsList[i]);
+      changeBackground(outfitsList[i].background);
+      currentOutfit.garments = outfitsList[i].garments;
+      currentOutfit.background = outfitsList[i].background;
       saveBtn.removeAttribute('disabled');
     }
   }
