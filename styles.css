@@ -211,7 +211,7 @@ label h2 {
 }
 
 .warning-msg {
-  width: 175px;
+  width: 15.4em;
   font-size: 0.7em;
   color: #fff;
   text-align: center;
@@ -316,7 +316,7 @@ label h2 {
 .outfit-card,
 .column3 input {
   font-style: Montserrat;
-  padding: 20px;
+  padding: 1em;
   width: 60%;
 }
 
