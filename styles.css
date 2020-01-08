@@ -55,7 +55,7 @@ h3 {
   color: #fff;
   font-family: 'Lakki Reddy', cursive;
   grid-area: column1;
-  margin-bottom: 30px;
+  margin-bottom: 1.6em;
   padding: 0 1.2em;
 }
 
@@ -95,8 +95,8 @@ button:hover,
 }
 
 .gear {
-  height: 60px;
-  margin: 10px;
+  height: 3.2em;
+  margin: 0.6em;
 }
 
 .gear1 {
@@ -170,8 +170,8 @@ h2 {
   background-color: #fff;
   border-radius: 10%;
   position: relative;
-  height: 500px;
-  width: 500px;
+  height: 31em;
+  width: 31em;
 }
 
 .bear-outfits img {
@@ -207,7 +207,7 @@ label h2 {
 }
 
 .warning {
-  height: 15px;
+  height: 0.9em;
 }
 
 .warning-msg {
@@ -327,7 +327,7 @@ label h2 {
 }
 
 .search-p {
-  width: 170px;
+  width: 14.3em;
 }
 
 .outfit-card {
@@ -407,8 +407,8 @@ h3 {
   }
 
   .bear-background {
-    height: 350px;
-    width: 350px;
+    height: 21.7em;
+    width: 21.7em;
   }
 
   #save-btn {
