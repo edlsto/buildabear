@@ -7,18 +7,16 @@ class Outfit {
   }
 
   addGarment(garment) {
-    this.garments.push(garment)
-  }
-
-  removeGarment(garment) {
-    if (this.garments.includes(garment)) {
-      this.garments.splice(this.garments.indexOf(garment), 1)
-    }
+    this.garments.push(garment);
   }
 
   changeBackground(background) {
     this.background = background;
   }
-}
 
-module.exports = Outfit;
+  removeGarment(garment) {
+    if (this.garments.includes(garment)) {
+      this.garments.splice(this.garments.indexOf(garment), 1);
+    }
+  }
+}
