@@ -120,8 +120,13 @@ function bounceBtn() {
 }
 
 function changeBackground(selector) {
+  if (event.target.classList.contains('active')){
+    bearBackground.style.backgroundImage = '';
+    currentOutfit.background = '';
+  } else {
     bearBackground.style.backgroundImage = `url("assets/${selector}.png")`;
     currentOutfit.background = selector;
+  }
 }
 
 function checkButtons(i) {
