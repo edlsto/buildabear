@@ -61,7 +61,7 @@ h3 {
 
 .column2 {
   grid-area: column2;
-  margin-bottom: 30px;
+  margin-bottom: 1.6em;
 }
 
 .column3 {
@@ -322,7 +322,7 @@ label h2 {
 
 .column3 input,
 .search-p {
-  margin: 0 10px 10px 10px;
+  margin: 0 0.5em 0.5em 0.5em;
   font-size: 1em;
 }
 
@@ -335,7 +335,7 @@ label h2 {
   box-shadow: 2px 2px 5px #fff;
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin: 0.5em;
 }
 
 .outfit-card p:hover {
@@ -345,7 +345,7 @@ label h2 {
 
 .column3 h2,
 h3 {
-  margin-left: 10px;
+  margin-left: 0.5em;
 }
 
 .fa:hover {
@@ -412,7 +412,7 @@ h3 {
   }
 
   #save-btn {
-    margin: 0 12px;
+    margin: 0 0.6em;
   }
 
   /* Saved outfit section */
@@ -447,8 +447,8 @@ h3 {
 
   .header__title {
     font-size: 3em;
-    margin-left: 26px;
-    margin-top: 10px;
+    margin-left: 1.3em;
+    margin-top: 0.5em;
   }
 
   .category-to-add__title,
@@ -515,7 +515,7 @@ h3 {
   }
 
   .category-to-add {
-    margin: 10px;
+    margin: 0.5em;
   }
 
   .outfit-card,
@@ -542,8 +542,8 @@ h3 {
 
   .header__title {
     font-size: 3em;
-    margin-left: 26px;
-    margin-top: 20px;
+    margin-left: 1.3em;
+    margin-top: 1em;
   }
 
   .category-to-add__title,
@@ -559,7 +559,7 @@ h3 {
   /* Bear section */
 
   .wood-border {
-    margin-bottom: 20px;
+    margin-bottom: 1em;
     width: 100%;
   }
 
