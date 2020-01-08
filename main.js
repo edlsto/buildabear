@@ -298,24 +298,13 @@ function searchOutfits() {
   allCards.forEach(function(card) {
     card.remove();
   });
-  var searchTerm = outfitSearchInput.value;
   var filteredOutfits = [];
-  var hasGarment = false;
-  var nameMatch = false;
   outfits.forEach(function(outfit) {
     outfit.garments.forEach(function(garment) {
-      if (searchTerm === garment.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
-        hasGarment = true;
-        filteredOutfits.push(outfit);
-      }
-    })
-
-    if (searchTerm === outfit.title.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
-      filteredOutfits.push(outfit);
-    }
-    if (searchTerm === outfit.background.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
-      filteredOutfits.push(outfit);
-    }
+      sliceSearch(garment, outfit, filteredOutfits);
+    });
+    sliceSearch(outfit.title, outfit, filteredOutfits);
+    sliceSearch(outfit.background, outfit, filteredOutfits);
   });
   showSearchedCards(filteredOutfits);
 }
@@ -324,6 +313,13 @@ function showSearchedCards(found) {
   found.forEach(function(outfit){
     addSavedOutfitCard(outfit.id, outfit.title);
   })
+}
+
+function sliceSearch(searchArea, outfit, filteredOutfits) {
+  var searchTerm = outfitSearchInput.value;
+  if (searchTerm === searchArea.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
+    filteredOutfits.push(outfit);
+  }
 }
 
 function toggleBtnClass(buttonClass, buttonList) {
