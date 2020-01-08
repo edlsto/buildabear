@@ -65,17 +65,15 @@ checkForSavedCards();
 
 function validateDuplicateName() {
   var duplicate = false;
+  var warningAlert = null;
   outfits.forEach(function(outfit) {
     if (outfitInput.value === outfit.title) {
-        duplicate = true;
+      duplicate = true;
+      warningAlert = `<p class="warning-msg"><i class="fa fa-exclamation-triangle"></i> Outfit name
+        exists. On save, existing outfit will be replaced.</p>`
     }
-  })
-  if (duplicate){
-  warningDiv.innerHTML = `<p class="warning-msg"><i class="fa fa-exclamation-triangle"></i> Outfit name
-    exists. On save, existing outfit will be replaced.</p>`
-  } else {
-    warningDiv.innerHTML = '';
-  }
+  });
+  warningDiv.innerHTML = warningAlert || '';
 }
 
 function accessOutfits(event){
