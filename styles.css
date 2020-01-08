@@ -55,13 +55,13 @@ h3 {
   color: #fff;
   font-family: 'Lakki Reddy', cursive;
   grid-area: column1;
-  margin-bottom: 30px;
+  margin-bottom: 1.6em;
   padding: 0 1.2em;
 }
 
 .column2 {
   grid-area: column2;
-  margin-bottom: 30px;
+  margin-bottom: 1.6em;
 }
 
 .column3 {
@@ -95,8 +95,8 @@ button:hover,
 }
 
 .gear {
-  height: 60px;
-  margin: 10px;
+  height: 3.2em;
+  margin: 0.6em;
 }
 
 .gear1 {
@@ -170,8 +170,8 @@ h2 {
   background-color: #fff;
   border-radius: 10%;
   position: relative;
-  height: 500px;
-  width: 500px;
+  height: 31em;
+  width: 31em;
 }
 
 .bear-outfits img {
@@ -194,7 +194,7 @@ h2 {
 }
 
 label h2 {
-  font-size: 22px;
+  font-size: 1.4em;
 }
 
 .column2 input,
@@ -207,12 +207,12 @@ label h2 {
 }
 
 .warning {
-  height: 15px;
+  height: 0.9em;
 }
 
 .warning-msg {
-  width: 175px;
-  font-size: 12px;
+  width: 15.4em;
+  font-size: 0.7em;
   color: #fff;
   text-align: center;
   text-shadow: .3px .3px 1px #ff0000;
@@ -316,18 +316,18 @@ label h2 {
 .outfit-card,
 .column3 input {
   font-style: Montserrat;
-  padding: 20px;
+  padding: 1em;
   width: 60%;
 }
 
 .column3 input,
 .search-p {
-  margin: 0 10px 10px 10px;
-  font-size: 12px;
+  margin: 0 0.5em 0.5em 0.5em;
+  font-size: 1em;
 }
 
 .search-p {
-  width: 170px;
+  width: 14.3em;
 }
 
 .outfit-card {
@@ -335,7 +335,7 @@ label h2 {
   box-shadow: 2px 2px 5px #fff;
   display: flex;
   justify-content: space-between;
-  margin: 10px;
+  margin: 0.5em;
 }
 
 .outfit-card p:hover {
@@ -345,7 +345,7 @@ label h2 {
 
 .column3 h2,
 h3 {
-  margin-left: 10px;
+  margin-left: 0.5em;
 }
 
 .fa:hover {
@@ -407,12 +407,12 @@ h3 {
   }
 
   .bear-background {
-    height: 350px;
-    width: 350px;
+    height: 21.7em;
+    width: 21.7em;
   }
 
   #save-btn {
-    margin: 0 12px;
+    margin: 0 0.6em;
   }
 
   /* Saved outfit section */
@@ -447,8 +447,8 @@ h3 {
 
   .header__title {
     font-size: 3em;
-    margin-left: 26px;
-    margin-top: 10px;
+    margin-left: 1.3em;
+    margin-top: 0.5em;
   }
 
   .category-to-add__title,
@@ -515,7 +515,7 @@ h3 {
   }
 
   .category-to-add {
-    margin: 10px;
+    margin: 0.5em;
   }
 
   .outfit-card,
@@ -542,8 +542,8 @@ h3 {
 
   .header__title {
     font-size: 3em;
-    margin-left: 26px;
-    margin-top: 20px;
+    margin-left: 1.3em;
+    margin-top: 1em;
   }
 
   .category-to-add__title,
@@ -559,7 +559,7 @@ h3 {
   /* Bear section */
 
   .wood-border {
-    margin-bottom: 20px;
+    margin-bottom: 1em;
     width: 100%;
   }
 
