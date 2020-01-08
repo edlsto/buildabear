@@ -1,5 +1,6 @@
 var accessoriesBox = document.getElementById('accessories-box');
 var accessoriesBtns = document.querySelectorAll('.accessories-btn');
+var allGarmentButtons = document.querySelectorAll('.hats-btn, .clothes-btn, .accessories-btn');
 var backgroundBtnBox = document.querySelector('.background-btns');
 var backgroundBtns = document.querySelectorAll('.background-btn');
 var bearBackground = document.querySelector('.bear-background');
@@ -12,11 +13,10 @@ var hatsBtns = document.querySelectorAll('.hats-btn');
 var images = document.querySelectorAll('.bear-outfits > *');
 var outfitInput = document.getElementById('outfit-input');
 var outfits = [];
+var outfitSearchInput = document.getElementById('search-input');
 var outfitStorage = document.querySelector('.outfit-storage');
 var saveBtn = document.getElementById('save-btn');
-var allGarmentButtons = document.querySelectorAll('.hats-btn, .clothes-btn, .accessories-btn');
 var warningDiv = document.querySelector('.warning-div');
-var outfitSearchInput = document.getElementById('search-input');
 
 outfitSearchInput.addEventListener('keyup', searchOutfits)
 
