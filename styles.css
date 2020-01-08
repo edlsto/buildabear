@@ -354,7 +354,7 @@ h3 {
     animation-name: bounce;
 }
 
-@media screen and (max-width: 1,015px) {
+@media screen and (max-width: 1015px) {
 
   /* Layout */
 
