@@ -3,7 +3,6 @@
   margin: 0;
 }
 
-
 /* LAYOUT */
 .body,
 p,
@@ -200,10 +199,10 @@ label h2 {
 }
 
 .warning-msg {
-  width: 175px;
-  font-size: 12px;
   color: #ff0000;
+  font-size: 12px;
   text-align: center;
+  width: 175px;
 }
 
 .column2 button {
@@ -309,8 +308,8 @@ label h2 {
 }
 
 .column3 input {
-  margin: 0 10px 10px 10px;
   font-size: 16px;
+  margin: 0 10px 10px 10px;
 }
 
 .outfit-card {
@@ -422,8 +421,8 @@ h3 {
   }
 
   .outfit-storage {
-  flex-direction: row;
-  flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   /* Add outfit section */
