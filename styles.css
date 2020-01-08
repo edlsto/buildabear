@@ -194,7 +194,7 @@ h2 {
 }
 
 label h2 {
-  font-size: 22px;
+  font-size: 1.4em;
 }
 
 .column2 input,
@@ -212,7 +212,7 @@ label h2 {
 
 .warning-msg {
   width: 175px;
-  font-size: 12px;
+  font-size: 0.7em;
   color: #fff;
   text-align: center;
   text-shadow: .3px .3px 1px #ff0000;
@@ -323,7 +323,7 @@ label h2 {
 .column3 input,
 .search-p {
   margin: 0 10px 10px 10px;
-  font-size: 12px;
+  font-size: 1em;
 }
 
 .search-p {
