@@ -16,6 +16,9 @@ var outfitStorage = document.querySelector('.outfit-storage');
 var saveBtn = document.getElementById('save-btn');
 var allGarmentButtons = document.querySelectorAll('.hats-btn, .clothes-btn, .accessories-btn');
 var warningDiv = document.querySelector('.warning-div');
+var outfitSearchInput = document.getElementById('search-input');
+
+outfitSearchInput.addEventListener('keyup', searchOutfits)
 
 accessoriesBox.addEventListener('click', function() {
   addRemoveImages('accessory');
@@ -25,6 +28,7 @@ accessoriesBox.addEventListener('click', function() {
 backgroundBtnBox.addEventListener('click', function() {
   changeBackground(event.target.id);
   toggleBtnClass('background-btn', backgroundBtns);
+  removeActiveBtnStates(backgroundBtns);
 });
 
 clothesBox.addEventListener('click', function() {
@@ -85,9 +89,9 @@ function accessOutfits(event){
 
 function addRemoveImages(category){
   if (event.target.classList.contains('active')) {
-    removeAssociatedImage();
+   removeAssociatedImage();
   } else {
-    checkInactiveTarget(category);
+    // checkInactiveTarget(category);
     findMatchingButton();
   }
 }
@@ -151,6 +155,10 @@ function checkForGarments(outfit) {
 }
 
 function checkForSavedCards() {
+  var allCards = document.querySelectorAll('.outfit-card');
+  allCards.forEach(function(card) {
+    card.remove();
+  });
   if (localStorage.outfits === '[]' || localStorage.outfits === undefined) {
     createOutfit();
   } else {
@@ -276,9 +284,41 @@ function revertToNaked() {
   createOutfit();
 }
 
+function searchOutfits() {
+  var allCards = document.querySelectorAll('.outfit-card');
+  allCards.forEach(function(card) {
+    card.remove();
+  });
+  var searchTerm = outfitSearchInput.value;
+  var filteredOutfits = [];
+  var hasGarment = false;
+  var nameMatch = false;
+  outfits.forEach(function(outfit) {
+    outfit.garments.forEach(function(garment) {
+      if (searchTerm === garment.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
+        hasGarment = true;
+        filteredOutfits.push(outfit);
+      }
+    })
+
+    if (searchTerm === outfit.title.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
+      filteredOutfits.push(outfit);
+    }
+    if (searchTerm === outfit.background.slice(0, searchTerm.length) && filteredOutfits.indexOf(outfit) === -1) {
+      filteredOutfits.push(outfit);
+    }
+  });
+  showSearchedCards(filteredOutfits);
+}
+
+function showSearchedCards(found) {
+  found.forEach(function(outfit){
+    addSavedOutfitCard(outfit.id, outfit.title);
+  })
+}
+
 function toggleBtnClass(buttonClass, buttonList) {
   if (event.target.classList.contains(buttonClass)) {
     event.target.classList.toggle('active');
-    removeActiveBtnStates(buttonList);
   }
 }
