@@ -62,14 +62,18 @@ outfitStorage.addEventListener('click', function() {
 checkForSavedCards();
 
 function validateDuplicateName() {
+  var duplicate = false;
   outfits.forEach(function(outfit) {
     if (outfitInput.value === outfit.title) {
-      warningDiv.innerHTML = `<p class="warning-msg"><i class="fa fa-exclamation-triangle"></i> Outfit name
-        exists. On save, existing outfit will be replaced.</p>`
-    } else {
-      warningDiv.innerHTML = '';
+        duplicate = true;
     }
   })
+  if (duplicate){
+  warningDiv.innerHTML = `<p class="warning-msg"><i class="fa fa-exclamation-triangle"></i> Outfit name
+    exists. On save, existing outfit will be replaced.</p>`
+  } else {
+    warningDiv.innerHTML = '';
+  }
 }
 
 function accessOutfits(event){
