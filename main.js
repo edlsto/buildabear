@@ -21,32 +21,34 @@ var outfitSearchInput = document.getElementById('search-input');
 outfitSearchInput.addEventListener('keyup', searchOutfits)
 
 accessoriesBox.addEventListener('click', function() {
-  addRemoveImages('accessory');
-  toggleBtnClass('accessories-btn', accessoriesBtns);
+  addRemoveImages('accessory', event);
+  toggleBtnClass('accessories-btn', accessoriesBtns, event);
 });
 
 backgroundBtnBox.addEventListener('click', function() {
-  changeBackground(event.target.id);
-  toggleBtnClass('background-btn', backgroundBtns);
-  removeActiveBtnStates(backgroundBtns);
+  changeBackground(event.target.id, event);
+  toggleBtnClass('background-btn', backgroundBtns, event);
+  removeActiveBtnStates(backgroundBtns, event);
 });
 
 clothesBox.addEventListener('click', function() {
-  addRemoveImages('clothing');
-  toggleBtnClass('clothes-btn', clothesBtns);
+  addRemoveImages('clothing', event);
+  toggleBtnClass('clothes-btn', clothesBtns, event);
 });
 
-column1.addEventListener('click', bounceBtn);
+column1.addEventListener('click', function() {
+  bounceBtn(event);
+});
 
 hatBox.addEventListener('click', function() {
-  addRemoveImages('hat');
-  toggleBtnClass('hats-btn', hatsBtns);
+  addRemoveImages('hat', event);
+  toggleBtnClass('hats-btn', hatsBtns, event);
 });
 
 saveBtn.addEventListener('click', function() {
   pushCurrentOutfitToArray();
   clearForm();
-  revertToNaked();
+  revertToNaked(event);
 });
 
 outfitInput.addEventListener('input', function() {
@@ -83,7 +85,7 @@ function accessOutfits(event){
   for (var i = 0; i < outfitsList.length; i++) {
     if (outfitsList[i].title === outfitToGrab) {
       checkForGarments(outfitsList[i]);
-      changeBackground(outfitsList[i].background);
+      changeBackground(outfitsList[i].background, event);
       currentOutfit.garments = outfitsList[i].garments;
       currentOutfit.background = outfitsList[i].background;
       saveBtn.removeAttribute('disabled');
@@ -91,12 +93,11 @@ function accessOutfits(event){
   }
 }
 
-function addRemoveImages(category){
+function addRemoveImages(category, event){
   if (event.target.classList.contains('active')) {
-   removeAssociatedImage();
+   removeAssociatedImage(event);
   } else {
-    // checkInactiveTarget(category);
-    findMatchingButton();
+    findMatchingButton(event);
   }
 }
 
@@ -111,7 +112,7 @@ function addSavedOutfitCard(id, title) {
   localStorage.setItem('outfits', JSON.stringify(outfits));
 }
 
-function bounceBtn() {
+function bounceBtn(event) {
   if (event.target.tagName === 'BUTTON') {
     event.target.classList.remove('bounce');
     event.target.offsetWidth = event.target.offsetWidth;
@@ -119,7 +120,7 @@ function bounceBtn() {
   }
 }
 
-function changeBackground(selector) {
+function changeBackground(selector, event) {
   if (event.target.classList.contains('active')){
     bearBackground.style.backgroundImage = '';
     currentOutfit.background = '';
@@ -210,7 +211,7 @@ function createOutfit() {
   currentOutfit = new Outfit(id);
 };
 
-function findMatchingButton(){
+function findMatchingButton(event){
   for (var i = 0; i < images.length; i++) {
     if (event.target.classList.contains(images[i].id)) {
       images[i].classList.add('visible');
@@ -245,7 +246,7 @@ function pushCurrentOutfitToArray() {
   }
 }
 
-function removeActiveBtnStates(buttonList) {
+function removeActiveBtnStates(buttonList, event) {
   for (var i =0; i < buttonList.length; i++) {
     if (buttonList[i] !== event.target) {
       buttonList[i].classList.remove('active');
@@ -253,7 +254,7 @@ function removeActiveBtnStates(buttonList) {
   }
 }
 
-function removeAssociatedImage() {
+function removeAssociatedImage(event) {
   for (var i = 0; i < images.length; i++) {
     if (event.target.classList.contains(images[i].id)) {
       images[i].classList.remove('visible');
@@ -265,13 +266,13 @@ function removeAssociatedImage() {
 function removeOutfitCard(event) {
   if (event.target.classList.contains('fa')) {
     event.target.parentNode.remove();
-    removeOutfitFromArray();
+    removeOutfitFromArray(event);
     localStorage.setItem('outfits', JSON.stringify(outfits));
-    revertToNaked();
+    revertToNaked(event);
   }
 }
 
-function removeOutfitFromArray(){
+function removeOutfitFromArray(event){
   var idOfClicked = parseInt(event.target.parentNode.id);
   for (var i = 0; i < outfits.length; i++) {
     if (idOfClicked === outfits[i].id) {
@@ -280,16 +281,16 @@ function removeOutfitFromArray(){
   }
 }
 
-function revertToNaked() {
+function revertToNaked(event) {
   var visibleGarments = document.querySelectorAll('.visible');
   for (var i = 0; i < visibleGarments.length; i++) {
     visibleGarments[i].classList.remove('visible');
   }
   bearBackground.style.backgroundImage = '';
-  removeActiveBtnStates(hatsBtns);
-  removeActiveBtnStates(clothesBtns);
-  removeActiveBtnStates(accessoriesBtns);
-  removeActiveBtnStates(backgroundBtns);
+  removeActiveBtnStates(hatsBtns, event);
+  removeActiveBtnStates(clothesBtns, event);
+  removeActiveBtnStates(accessoriesBtns, event);
+  removeActiveBtnStates(backgroundBtns, event);
   createOutfit();
 }
 
@@ -322,7 +323,7 @@ function sliceSearch(searchArea, outfit, filteredOutfits) {
   }
 }
 
-function toggleBtnClass(buttonClass, buttonList) {
+function toggleBtnClass(buttonClass, buttonList, event) {
   if (event.target.classList.contains(buttonClass)) {
     event.target.classList.toggle('active');
   }
