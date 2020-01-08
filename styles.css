@@ -321,9 +321,14 @@ label h2 {
   width: 60%;
 }
 
-.column3 input {
+.column3 input,
+.search-p {
   margin: 0 10px 10px 10px;
-  font-size: 16px;
+  font-size: 12px;
+}
+
+.search-p {
+  width: 170px;
 }
 
 .outfit-card {
