@@ -63,19 +63,6 @@ outfitStorage.addEventListener('click', function() {
 
 checkForSavedCards();
 
-function validateDuplicateName() {
-  var duplicate = false;
-  var warningAlert = null;
-  outfits.forEach(function(outfit) {
-    if (outfitInput.value === outfit.title) {
-      duplicate = true;
-      warningAlert = `<p class="warning-msg"><i class="fa fa-exclamation-triangle"></i> Outfit name
-        exists. On save, existing outfit will be replaced.</p>`
-    }
-  });
-  warningDiv.innerHTML = warningAlert || '';
-}
-
 function accessOutfits(event){
   var outfitToGrab = event.target.innerText;
   var stringOfOutfits = localStorage.getItem('outfits');
@@ -325,4 +312,17 @@ function toggleBtnClass(buttonClass, buttonList, event) {
   if (event.target.classList.contains(buttonClass)) {
     event.target.classList.toggle('active');
   }
+}
+
+function validateDuplicateName() {
+  var duplicate = false;
+  var warningAlert = null;
+  outfits.forEach(function(outfit) {
+    if (outfitInput.value === outfit.title) {
+      duplicate = true;
+      warningAlert = `<p class="warning-msg"><i class="fa fa-exclamation-triangle"></i> Outfit name
+        exists. On save, existing outfit will be replaced.</p>`
+    }
+  });
+  warningDiv.innerHTML = warningAlert || '';
 }
