@@ -239,6 +239,13 @@ function removeActiveBtnStates(buttonList, event) {
   }
 }
 
+function removeAllCards() {
+  var allCards = document.querySelectorAll('.outfit-card');
+  allCards.forEach(function(card) {
+    card.remove();
+  });
+}
+
 function removeAssociatedImage(event) {
   for (var i = 0; i < images.length; i++) {
     if (event.target.classList.contains(images[i].id)) {
@@ -279,12 +286,11 @@ function revertToNaked(event) {
   createOutfit();
 }
 
+
+
 function searchOutfits() {
-  var allCards = document.querySelectorAll('.outfit-card');
-  allCards.forEach(function(card) {
-    card.remove();
-  });
   var filteredOutfits = [];
+  removeAllCards();
   outfits.forEach(function(outfit) {
     outfit.garments.forEach(function(garment) {
       sliceSearch(garment, outfit, filteredOutfits);
