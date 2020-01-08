@@ -1,6 +1,6 @@
-##README
+## README
 
-#Overview of project and goals
+# Overview of project and goals
 
 In this project, we sought to create an application that allows users to add outfits
 to a bear, save those outfits, and reload the outfits when revisiting the website. In
@@ -10,7 +10,16 @@ completing this application, we hoped to learn about the following:
 - Writing concise code and using parameters wherever possible
 - Deepen understanding of event bubbling and propagation
 
-#Technologies used, challenges, and wins
+We completed all of the functionality components for iterations 1-5 and the following
+user stories from iteration 6:
+- Add data validation to ensure that no two outfits can be named the same thing
+- Refactor so one outfit can contain more than one item from each category (i.e. the bear can wear more than one accessory, hat, etc, at a time).
+- Score 95 or higher on the Chrome Dev Tools Accessibility Audit
+- Add UI so users can filter saved outfits by the garments or background they include.
+- Add UI so users can input text to search by term - the names of the saved outfits that match the search term should be the only ones to appear
+
+
+# Technologies used, challenges, and wins
 
 Technologies used:
 - HTML
@@ -37,11 +46,12 @@ when and how we would use these datatypes.
 It was difficult at first, but we spent time getting to know each other's learning styles and
 have enhanced our professional collaboration skills because of it.
 
-#Screenshots of comp and our app
+# Screenshots of comp and our app
 
 ![Comp Screenshot](assets/bab-comp.png)
+![Final Screenshot](assets/bab-final-screenshot.jpg)
 
-#Contributors
+# Contributors
 
 - Ed Stoner: https://github.com/edlsto
 - Lili Manrique: https://github.com/lmanriq
