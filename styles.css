@@ -54,8 +54,8 @@ h3 {
   color: #fff;
   font-family: 'Lakki Reddy', cursive;
   grid-area: column1;
-  padding: 0 1.2em;
   margin-bottom: 30px;
+  padding: 0 1.2em;
 }
 
 .column2 {
@@ -69,10 +69,10 @@ h3 {
 
 .footer {
   background-color: #0076d1;
+  color: #fff;
   grid-area: footer;
   padding: 0.6em 0;
   text-align: center;
-  color: #fff;
 }
 
 button:hover,
@@ -398,12 +398,24 @@ h3 {
     margin: 0 12px;
   }
 
-
   /* Saved outfit section */
 
   .outfit-name {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
+
+  .column2 label {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  .outfit-card,
+  .column3 input {
+    width: 40%;
+  }
+
 
   .outfit-card {
     flex: 0 1 200px;
@@ -489,6 +501,11 @@ h3 {
     margin: 10px;
   }
 
+  .outfit-card,
+  .column3 input {
+    width: 90%;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -544,4 +561,5 @@ h3 {
   .outfit-card {
     flex: 0 1 auto;
   }
+
 }
