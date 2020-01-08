@@ -40,6 +40,8 @@ h3 {
   padding-top: 0.2em;
   text-align: center;
   overflow: visible;
+  display: flex;
+  justify-content: center;
 }
 
 .column1,
@@ -85,11 +87,21 @@ button:hover,
   color: #ffe74c;
   font-size: 4em;
   text-align: center;
-  text-shadow: .3px .3px 1px #000;
+  text-shadow: 3px 3px 1px #ff5964;
 }
 
 .header--secondary-font-color {
   color: #ffe74c;
+}
+
+.gear {
+  height: 60px;
+  margin: 10px;
+}
+
+.gear1 {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 /* LEFT COLUMN */
@@ -199,10 +211,11 @@ label h2 {
 }
 
 .warning-msg {
-  color: #ff0000;
-  font-size: 12px;
-  text-align: center;
   width: 175px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  text-shadow: .3px .3px 1px #ff0000;
 }
 
 .column2 button {
@@ -307,9 +320,14 @@ label h2 {
   width: 60%;
 }
 
-.column3 input {
-  font-size: 16px;
+.column3 input,
+.search-p {
   margin: 0 10px 10px 10px;
+  font-size: 12px;
+}
+
+.search-p {
+  width: 170px;
 }
 
 .outfit-card {
