@@ -18,8 +18,6 @@ var outfitStorage = document.querySelector('.outfit-storage');
 var saveBtn = document.getElementById('save-btn');
 var warningDiv = document.querySelector('.warning-div');
 
-outfitSearchInput.addEventListener('keyup', searchOutfits)
-
 accessoriesBox.addEventListener('click', function() {
   addRemoveImages('accessory', event);
   toggleBtnClass('accessories-btn', accessoriesBtns, event);
@@ -45,20 +43,22 @@ hatBox.addEventListener('click', function() {
   toggleBtnClass('hats-btn', hatsBtns, event);
 });
 
-saveBtn.addEventListener('click', function() {
-  pushCurrentOutfitToArray();
-  clearForm();
-  revertToNaked(event);
-});
-
 outfitInput.addEventListener('input', function() {
   checkInput();
   validateDuplicateName();
 });
 
+outfitSearchInput.addEventListener('keyup', searchOutfits)
+
 outfitStorage.addEventListener('click', function() {
   removeOutfitCard(event);
   accessOutfits(event);
+});
+
+saveBtn.addEventListener('click', function() {
+  pushCurrentOutfitToArray();
+  clearForm();
+  revertToNaked(event);
 });
 
 checkForSavedCards();
@@ -123,17 +123,6 @@ function checkButtons(i) {
   });
 }
 
-function checkImages(outfit) {
-  for (var i = 0; i < images.length; i++) {
-    if (outfit.garments.indexOf(images[i].id) > -1) {
-      images[i].classList.add('visible');
-      checkButtons(i);
-    } else {
-      images[i].classList.remove('visible');
-    }
-  }
-}
-
 function checkForGarments(outfit) {
   allGarmentButtons.forEach(function(button) {
     button.classList.remove('active');
@@ -141,7 +130,6 @@ function checkForGarments(outfit) {
   backgroundBtns.forEach(function(button) {
     button.classList.remove('active');
   });
-
   checkImages(outfit);
   if (outfit.background) {
     document.getElementById(outfit.background).classList.add('active');
@@ -160,6 +148,17 @@ function checkForSavedCards() {
     getOutfitsFromStorage();
     id = outfits[outfits.length - 1].id;
     createOutfit();
+  }
+}
+
+function checkImages(outfit) {
+  for (var i = 0; i < images.length; i++) {
+    if (outfit.garments.indexOf(images[i].id) > -1) {
+      images[i].classList.add('visible');
+      checkButtons(i);
+    } else {
+      images[i].classList.remove('visible');
+    }
   }
 }
 
@@ -285,8 +284,6 @@ function revertToNaked(event) {
   removeActiveBtnStates(backgroundBtns, event);
   createOutfit();
 }
-
-
 
 function searchOutfits() {
   var filteredOutfits = [];
